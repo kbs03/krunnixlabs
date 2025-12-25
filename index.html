@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Company</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Your custom CSS -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+   
+</head>
+
+<body>
+    
+<!-- Header -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-cube me-2"></i>NEXUS
+            </a>
+
+            <!-- Mobile hamburger -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Desktop navigation -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="#" role="button" 
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu services-dropdown">
+                            <div class="services-container">
+                                <!-- Left Column - Main Services -->
+                                <div class="main-services">
+                                    <div style="margin-bottom:10px ;" class="main-services-title">Our Services</div>
+
+                                    <div    class="main-service-item active" data-service="product-engineering">
+                                        <div class="main-service-icon">
+                                            <i class="fas fa-cube"></i>
+                                        </div>
+                                        <div class="main-service-content">
+                                            <div class="main-service-name">Product Engineering & SaaS</div>
+                                        </div>
+                                        <div class="main-service-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-service-item" data-service="enterprise-software">
+                                        <div class="main-service-icon">
+                                            <i class="fas fa-building"></i>
+                                        </div>
+                                        <div class="main-service-content">
+                                            <div class="main-service-name">Enterprise Software & Applications</div>
+                                        </div>
+                                        <div class="main-service-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-service-item" data-service="cloud-devops">
+                                        <div class="main-service-icon">
+                                            <i class="fas fa-cloud"></i>
+                                        </div>
+                                        <div class="main-service-content">
+                                            <div class="main-service-name">Cloud, DevOps & Security</div>
+                                        </div>
+                                        <div class="main-service-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-service-item" data-service="ai-data">
+                                        <div class="main-service-icon">
+                                            <i class="fas fa-brain"></i>
+                                        </div>
+                                        <div class="main-service-content">
+                                            <div class="main-service-name">AI & Data Solutions</div>
+                                        </div>
+                                        <div class="main-service-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-service-item" data-service="low-code">
+                                        <div class="main-service-icon">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <div class="main-service-content">
+                                            <div class="main-service-name">Low-Code/No-Code Development</div>
+                                        </div>
+                                        <div class="main-service-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-service-item" data-service="staff-augmentation">
+                                        <div class="main-service-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="main-service-content">
+                                            <div class="main-service-name">Staff Augmentation</div>
+                                        </div>
+                                        <div class="main-service-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column - Sub Services -->
+                            <div class="sub-services">
+                                <div class="sub-services-header">
+                                    <h3 class="sub-services-title">Product Engineering & SaaS</h3>
+                                </div>
+                            
+                                <div class="sub-services-list" style="display: flex; flex-direction: column; gap: 6px;">
+                                    <a href="web-development.html" class="sub-service-item"
+                                        style="display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;">
+                                        <h4 class="sub-service-name"
+                                            style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                                            Web Application Development
+                                        </h4>
+                                        <div class="sub-service-arrow"
+                                            style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                                            
+                                        </div>
+                                    </a>
+                            
+                                    <a href="mobile-development.html" class="sub-service-item"
+                                        style="display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;">
+                                        <h4 class="sub-service-name"
+                                            style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                                            Mobile App Development
+                                        </h4>
+                                        <div class="sub-service-arrow"
+                                            style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                                            
+                                        </div>
+                                    </a>
+                            
+                                    <a href="saas-development.html" class="sub-service-item"
+                                        style="display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;">
+                                        <h4 class="sub-service-name"
+                                            style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                                            SaaS Platform Development
+                                        </h4>
+                                        <div class="sub-service-arrow"
+                                            style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                                            
+                                        </div>
+                                    </a>
+                            
+                                    <a href="api-development.html" class="sub-service-item"
+                                        style="display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;">
+                                        <h4 class="sub-service-name"
+                                            style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                                            API Development & Integration
+                                        </h4>
+                                        <div class="sub-service-arrow"
+                                            style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                                            
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="work.html">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="careers.html">Careers</a>
+                    </li>
+                </ul>
+
+                <!-- Desktop CTA -->
+                <a href="contact.html" class="btn btn-primary">Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Custom JavaScript for Services Dropdown -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+            const mainServiceItems = document.querySelectorAll('.main-service-item');
+            const subServicesTitle = document.querySelector('.sub-services-title');
+            const subServicesList = document.querySelector('.sub-services-list');
+
+            // Service data - updated to match your HTML structure
+            const servicesData = {
+                'product-engineering': {
+                    title: 'Product Engineering & SaaS',
+                    subServices: [
+                        {
+                            name: 'Web Application Development',
+                            url: 'web-development.html'
+                        },
+                        {
+                            name: 'Mobile App Development',
+                            url: 'mobile-development.html'
+                        },
+                        {
+                            name: 'SaaS Platform Development',
+                            url: 'saas-development.html'
+                        },
+                        {
+                            name: 'API Development & Integration',
+                            url: 'api-development.html'
+                        }
+                    ]
+                },
+                'enterprise-software': {
+                    title: 'Enterprise Software & Applications',
+                    subServices: [
+                        {
+                            name: 'ERP Systems Implementation',
+                            url: 'erp-systems.html'
+                        },
+                        {
+                            name: 'Business Intelligence',
+                            url: 'business-intelligence.html'
+                        },
+                        {
+                            name: 'Workflow Automation',
+                            url: 'workflow-automation.html'
+                        },
+                        {
+                            name: 'Legacy System Modernization',
+                            url: 'legacy-modernization.html'
+                        }
+                    ]
+                },
+                'cloud-devops': {
+                    title: 'Cloud, DevOps & Security',
+                    subServices: [
+                        {
+                            name: 'Cloud Migration Services',
+                            url: 'cloud-migration.html'
+                        },
+                        {
+                            name: 'DevOps Implementation',
+                            url: 'devops-implementation.html'
+                        },
+                        {
+                            name: 'Security Solutions',
+                            url: 'security-solutions.html'
+                        },
+                        {
+                            name: 'Infrastructure as Code',
+                            url: 'infrastructure-code.html'
+                        }
+                    ]
+                },
+                'ai-data': {
+                    title: 'AI & Data Solutions',
+                    subServices: [
+                        {
+                            name: 'Machine Learning Solutions',
+                            url: 'machine-learning.html'
+                        },
+                        {
+                            name: 'AI Implementation',
+                            url: 'ai-implementation.html'
+                        },
+                        {
+                            name: 'Data Analytics',
+                            url: 'data-analytics.html'
+                        },
+                        {
+                            name: 'Big Data Solutions',
+                            url: 'big-data.html'
+                        }
+                    ]
+                },
+                'low-code': {
+                    title: 'Low-Code/No-Code Development',
+                    subServices: [
+                        {
+                            name: 'Rapid Prototyping',
+                            url: 'rapid-prototyping.html'
+                        },
+                        {
+                            name: 'Visual Development',
+                            url: 'visual-development.html'
+                        },
+                        {
+                            name: 'Custom Components',
+                            url: 'custom-components.html'
+                        },
+                        {
+                            name: 'Accelerated Deployment',
+                            url: 'accelerated-deployment.html'
+                        }
+                    ]
+                },
+                'staff-augmentation': {
+                    title: 'Staff Augmentation',
+                    subServices: [
+                        {
+                            name: 'Dedicated Developers',
+                            url: 'dedicated-developers.html'
+                        },
+                        {
+                            name: 'Team Extension',
+                            url: 'team-extension.html'
+                        },
+                        {
+                            name: 'Expert Consultation',
+                            url: 'expert-consultation.html'
+                        },
+                        {
+                            name: 'Project-based Staffing',
+                            url: 'project-staffing.html'
+                        }
+                    ]
+                }
+            };
+
+            // Function to update sub-services
+            function updateSubServices(serviceKey) {
+                const service = servicesData[serviceKey];
+
+                if (service) {
+                    subServicesTitle.textContent = service.title;
+
+                    // Clear existing sub-services
+                    subServicesList.innerHTML = '';
+
+                    // Add new sub-services
+                    service.subServices.forEach(subService => {
+                        const subServiceItem = document.createElement('a');
+                        subServiceItem.className = 'sub-service-item';
+                        subServiceItem.href = subService.url;
+                        subServiceItem.style.cssText = 'display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;';
+
+                        subServiceItem.innerHTML = `
+                    <h4 class="sub-service-name" style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                        ${subService.name}
+                    </h4>
+                    <div class="sub-service-arrow" style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                    </div>
+                `;
+
+                        // Add hover effect
+                        subServiceItem.addEventListener('mouseenter', function () {
+                            this.style.backgroundColor = '#f7fafc';
+                            this.querySelector('.sub-service-name').style.color = '#4299e1';
+                            this.querySelector('.sub-service-arrow').style.color = '#4299e1';
+                            this.querySelector('.sub-service-arrow').innerHTML = '→';
+                        });
+
+                        subServiceItem.addEventListener('mouseleave', function () {
+                            this.style.backgroundColor = '';
+                            this.querySelector('.sub-service-name').style.color = '#1a202c';
+                            this.querySelector('.sub-service-arrow').style.color = '#718096';
+                            this.querySelector('.sub-service-arrow').innerHTML = '';
+                        });
+
+                        subServicesList.appendChild(subServiceItem);
+                    });
+                }
+            }
+
+            // Add click event listeners to main service items
+            mainServiceItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all items
+                    mainServiceItems.forEach(i => i.classList.remove('active'));
+
+                    // Add active class to clicked item
+                    this.classList.add('active');
+
+                    // Update sub-services
+                    const serviceKey = this.getAttribute('data-service');
+                    updateSubServices(serviceKey);
+                });
+
+                // Add hover effect for main service items
+                item.addEventListener('mouseenter', function () {
+                    if (!this.classList.contains('active')) {
+                        this.style.backgroundColor = '#f7fafc';
+                    }
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    if (!this.classList.contains('active')) {
+                        this.style.backgroundColor = '';
+                    }
+                });
+            });
+
+            // Add scroll effect to navbar
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Initialize with the first service active
+            if (mainServiceItems.length > 0) {
+                mainServiceItems[0].classList.add('active');
+                updateSubServices(mainServiceItems[0].getAttribute('data-service'));
+            }
+        });
+        const mainServiceItems = document.querySelectorAll('.main-service-item');
+        const subServicesTitle = document.querySelector('.sub-services-title');
+        const subServicesDescription = document.querySelector('.sub-services-description');
+        const subServicesGrid = document.querySelector('.sub-services-grid');
+
+        // Service data
+        const servicesData = {
+            'product-engineering': {
+                title: 'Product Engineering & SaaS',
+                description: 'End-to-end development of scalable digital products and software-as-a-service platforms',
+                subServices: [
+                    {
+                        icon: 'fas fa-laptop-code',
+                        name: 'Web Application Development',
+                        description: 'Responsive and performant web applications using modern frameworks'
+                    },
+                    {
+                        icon: 'fas fa-mobile-alt',
+                        name: 'Mobile App Development',
+                        description: 'Native and cross-platform mobile applications for iOS and Android'
+                    },
+                    {
+                        icon: 'fas fa-layer-group',
+                        name: 'SaaS Platform Development',
+                        description: 'Multi-tenant SaaS platforms with subscription management'
+                    },
+                    {
+                        icon: 'fas fa-cogs',
+                        name: 'API Development & Integration',
+                        description: 'RESTful APIs and third-party integrations'
+                    }
+                ]
+            },
+            'enterprise-software': {
+                title: 'Enterprise Software & Applications',
+                description: 'Custom enterprise solutions for large-scale business operations',
+                subServices: [
+                    {
+                        icon: 'fas fa-building',
+                        name: 'ERP Systems',
+                        description: 'Enterprise Resource Planning solutions'
+                    },
+                    {
+                        icon: 'fas fa-chart-line',
+                        name: 'Business Intelligence',
+                        description: 'Data analytics and reporting platforms'
+                    },
+                    {
+                        icon: 'fas fa-project-diagram',
+                        name: 'Workflow Automation',
+                        description: 'Business process automation systems'
+                    },
+                    {
+                        icon: 'fas fa-database',
+                        name: 'Legacy System Modernization',
+                        description: 'Upgrading outdated systems to modern platforms'
+                    }
+                ]
+            },
+            'cloud-devops': {
+                title: 'Cloud, DevOps & Security',
+                description: 'Infrastructure automation and cloud-native security solutions',
+                subServices: [
+                    {
+                        icon: 'fas fa-server',
+                        name: 'Cloud Migration',
+                        description: 'Seamless transition to cloud infrastructure'
+                    },
+                    {
+                        icon: 'fas fa-code-branch',
+                        name: 'DevOps Implementation',
+                        description: 'CI/CD pipelines and automation'
+                    },
+                    {
+                        icon: 'fas fa-shield-alt',
+                        name: 'Security Solutions',
+                        description: 'Comprehensive cybersecurity services'
+                    },
+                    {
+                        icon: 'fas fa-network-wired',
+                        name: 'Infrastructure as Code',
+                        description: 'Automated infrastructure management'
+                    }
+                ]
+            },
+            'ai-data': {
+                title: 'AI & Data Solutions',
+                description: 'Intelligent solutions leveraging artificial intelligence and data analytics',
+                subServices: [
+                    {
+                        icon: 'fas fa-brain',
+                        name: 'Machine Learning',
+                        description: 'Custom ML models and algorithms'
+                    },
+                    {
+                        icon: 'fas fa-robot',
+                        name: 'AI Implementation',
+                        description: 'AI-powered business solutions'
+                    },
+                    {
+                        icon: 'fas fa-chart-bar',
+                        name: 'Data Analytics',
+                        description: 'Business intelligence and insights'
+                    },
+                    {
+                        icon: 'fas fa-database',
+                        name: 'Big Data Solutions',
+                        description: 'Large-scale data processing systems'
+                    }
+                ]
+            },
+            'low-code': {
+                title: 'Low-Code/No-Code Development',
+                description: 'Rapid application development with minimal coding',
+                subServices: [
+                    {
+                        icon: 'fas fa-bolt',
+                        name: 'Rapid Prototyping',
+                        description: 'Quick MVP development and testing'
+                    },
+                    {
+                        icon: 'fas fa-puzzle-piece',
+                        name: 'Visual Development',
+                        description: 'Drag-and-drop interface building'
+                    },
+                    {
+                        icon: 'fas fa-tools',
+                        name: 'Custom Components',
+                        description: 'Extended functionality development'
+                    },
+                    {
+                        icon: 'fas fa-rocket',
+                        name: 'Accelerated Deployment',
+                        description: 'Faster time-to-market solutions'
+                    }
+                ]
+            },
+            'staff-augmentation': {
+                title: 'Staff Augmentation',
+                description: 'Expert talent augmentation for your development teams',
+                subServices: [
+                    {
+                        icon: 'fas fa-user-plus',
+                        name: 'Dedicated Developers',
+                        description: 'Full-time dedicated team members'
+                    },
+                    {
+                        icon: 'fas fa-users',
+                        name: 'Team Extension',
+                        description: 'Scalable team augmentation'
+                    },
+                    {
+                        icon: 'fas fa-graduation-cap',
+                        name: 'Expert Consultation',
+                        description: 'Technical guidance and mentorship'
+                    },
+                    {
+                        icon: 'fas fa-handshake',
+                        name: 'Project-based Staffing',
+                        description: 'Flexible staffing for specific projects'
+                    }
+                ]
+            }
+        };
+
+        // Function to update sub-services
+        function updateSubServices(serviceKey) {
+            const service = servicesData[serviceKey];
+
+            if (service) {
+                subServicesTitle.textContent = service.title;
+                subServicesDescription.textContent = service.description;
+
+                // Clear existing sub-services
+                subServicesGrid.innerHTML = '';
+
+                // Add new sub-services
+                service.subServices.forEach(subService => {
+                    const subServiceItem = document.createElement('div');
+                    subServiceItem.className = 'sub-service-item';
+                    subServiceItem.innerHTML = `
+                            <div class="sub-service-icon">
+                                <i class="${subService.icon}"></i>
+                            </div>
+                            <h4 class="sub-service-name">${subService.name}</h4>
+                            <p class="sub-service-description">${subService.description}</p>
+                        `;
+                    subServicesGrid.appendChild(subServiceItem);
+                });
+            }
+        }
+
+        // Add click event listeners to main service items
+        mainServiceItems.forEach(item => {
+            item.addEventListener('click', function () {
+                // Remove active class from all items
+                mainServiceItems.forEach(i => i.classList.remove('active'));
+
+                // Add active class to clicked item
+                this.classList.add('active');
+
+                // Update sub-services
+                const serviceKey = this.getAttribute('data-service');
+                updateSubServices(serviceKey);
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    
+</script>
+
+    <!-- Hero Section -->
+    <section  class="hero-section" aria-labelledby="hero-heading">
+        <div class="container">
+            <div class="row align-items-center min-vh-100 ">
+                <!-- Left Column - Text Content -->
+                <div class="col-lg-6 col-md-8">
+                    <div class="hero-content">
+                        <!-- Metric Badges -->
+                        <div class="d-flex flex-wrap gap-2 mb-4" role="list" aria-label="Company achievements">
+                            <div class="stat-badge" role="listitem">
+                                <span class="counter" data-target="650">0</span>+ engineers
+                            </div>
+                            <div class="stat-badge" role="listitem">
+                                <span class="counter" data-target="25">0</span>+ years
+                            </div>
+                            <div class="stat-badge" role="listitem">
+                                <span class="counter" data-target="1000">0</span>+ projects
+                            </div>
+                        </div>
+
+                        <!-- Headline -->
+                        <h1 id="hero-heading" class="hero-title mb-4">
+                            Building AI-driven, secure & scalable software
+                        </h1>
+
+                        <!-- Subheadline -->
+                        <p class="hero-subtitle mb-5">
+                            We deliver cutting-edge digital solutions that transform businesses and drive growth.
+                            Partner with us to turn your vision into reality with our expert engineering team.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="hero-actions mb-5">
+                            <div class="d-flex flex-wrap gap-3">
+                                <a href="#contact" class="btn btnn-primary btn-lg px-4 py-3"
+                                    aria-describedby="hero-heading">
+                                    Talk to our experts
+                                </a>
+                                <a href="#services" class="btn btnn-outline-primary btn-lg px-4 py-3">
+                                    Explore services
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Right Column - AI Visualization -->
+                <div class="col-lg-6 col-md-4">
+
+
+                    <div class="visualization-area">
+                        <!-- AI Brain -->
+                        <div class="ai-brain">
+                            <div class="brain-circle"></div>
+                            <div class="brain-core">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Cluster -->
+                        <div class="cloud-cluster">
+                            <div class="cloud-server">
+                                <i class="fas fa-laptop-code"></i> <!-- Human coding icon -->
+                            </div>
+                            <div class="cloud-server">
+                                <i class="fas fa-robot"></i> <!-- AI icon -->
+                            </div>
+                            <div class="cloud-server">
+                                <i class="fas fa-cloud"></i> <!-- Cloud icon -->
+                            </div>
+                            <div class="cloud-connection"></div>
+                        </div>
+
+
+                        <!-- SaaS Platform - Future Trend Perspective -->
+                        <div class="saas-platform">
+                            <div class="platform-modules">
+                                <div class="platform-module">
+                                    <i class="fas fa-brain"></i> <!-- AI & Machine Learning -->
+                                </div>
+                                <div class="platform-module">
+                                    <i class="fas fa-shield-alt"></i> <!-- Cybersecurity -->
+                                </div>
+                                <div class="platform-module">
+                                    <i class="fas fa-cloud-upload-alt"></i> <!-- Cloud-native & Edge Computing -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Flow -->
+                        <div class="data-flow">
+                            <div class="data-particle"></div>
+                            <div class="data-particle"></div>
+                            <div class="data-particle"></div>
+                            <div class="data-particle"></div>
+                        </div>
+                        <!-- Flying Service Labels -->
+                        <div class="flying-services">
+                            <span class="service-label"
+                                style="--i:0; --top:10%; --color:linear-gradient(90deg, #667eea, #764ba2);">AI</span>
+                            <span class="service-label"
+                                style="--i:1; --top:30%; --color:linear-gradient(90deg, #f093fb, #f5576c);">Cloud</span>
+                            <span class="service-label"
+                                style="--i:2; --top:50%; --color:linear-gradient(90deg, #4facfe, #00f2fe);">SaaS</span>
+                            <span class="service-label"
+                                style="--i:3; --top:70%; --color:linear-gradient(90deg, #43e97b, #38f9d7);">Web</span>
+                            <span class="service-label"
+                                style="--i:4; --top:85%; --color:linear-gradient(90deg, #ff6a00, #ee0979);">Application</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Flying Service Labels -->
+
+                </div>
+            </div>
+    </section>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Animate cards
+            const cards = document.querySelectorAll('.tech-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+                observer.observe(card);
+            });
+
+            // Animate header
+            const headerElements = document.querySelectorAll('.section-badge, .section-title, .section-subtitle');
+            headerElements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(el);
+            });
+        });
+    </script>
+
+
+    <!-- Services Section -->
+    <section class="services-section py-5" aria-labelledby="services-heading">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <p  style="font-size: 2rem;"  id="services-heading" class="display-5 fw-bold mb-3">Our Services</p>
+                    <p class="lead text-muted-custom">Comprehensive digital solutions to drive your business forward</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Product Engineering -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card card-tech h-100" role="link" tabindex="0" data-href="#product-engineering">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect x="8" y="12" width="32" height="24" rx="4" fill="var(--primary)"
+                                        fill-opacity="0.1" />
+                                   <rect x="12" y="16" width="24" height="16" rx="2" fill="var(--primary)" />
+                                    <path d="M16 24H32" stroke="var(--card)" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M16 28H28" stroke="var(--card)" stroke-width="2" stroke-linecap="round" />
+                                    <circle cx="20" cy="32" r="1" fill="var(--card)" />
+                                </svg>
+                            </div>
+                            <h3 class="h4 mb-3">Product Engineering</h3>
+                            <p class="text-muted-custom mb-4">End-to-end development of scalable digital products from
+                                concept to deployment.</p>
+                            <a href="#product-engineering" class="service-link stretched-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Data -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card card-tech h-100" role="link" tabindex="0" data-href="#ai-data">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <circle cx="24" cy="24" r="16" fill="var(--accent)" fill-opacity="0.1" />
+                                    <path
+                                        d="M20 16C20 13.7909 21.7909 12 24 12C26.2091 12 28 13.7909 28 16V20C28 22.2091 26.2091 24 24 24C21.7909 24 20 22.2091 20 20V16Z"
+                                        fill="var(--accent)" />
+                                    <path
+                                        d="M16 28C16 25.7909 17.7909 24 20 24H28C30.2091 24 32 25.7909 32 28C32 30.2091 30.2091 32 28 32H20C17.7909 32 16 30.2091 16 28Z"
+                                        fill="var(--accent)" />
+                                    <circle cx="18" cy="18" r="1.5" fill="var(--card)" />
+                                    <circle cx="30" cy="30" r="1.5" fill="var(--card)" />
+                                </svg>
+                            </div>
+                            <h3 class="h4 mb-3">AI & Data</h3>
+                            <p class="text-muted-custom mb-4">Intelligent solutions leveraging machine learning and data
+                                analytics for business insights.</p>
+                            <a href="#ai-data" class="service-link stretched-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card card-tech h-100" role="link" tabindex="0" data-href="#cloud-devops">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M36 28C38.2091 28 40 26.2091 40 24C40 21.7909 38.2091 20 36 20C35.3758 18.8325 34.1688 18 32.8 18C31.1447 18 29.7047 19.177 29.2 20.8C28.5333 20.8 27.8667 21.0667 27.2 21.6C26.5333 22.1333 26.1333 22.8 26 23.6C24.8 23.6 23.7333 24.1333 22.8 25.2C21.8667 26.2667 21.4667 27.4667 21.6 28.8C20.2667 29.4667 19.2 30.5333 18.4 32C17.6 33.4667 17.2 35.0667 17.2 36.8C17.2 38.5333 17.6 40.1333 18.4 41.6C19.2 43.0667 20.2667 44.1333 21.6 44.8C22.9333 45.4667 24.4 45.8 26 45.8H38C41.3137 45.8 44 43.1137 44 39.8C44 36.4863 41.3137 33.8 38 33.8C37.3333 33.8 36.6667 33.9333 36 34.2C36 32.4667 35.6 30.9333 34.8 29.6C34 28.2667 33.0667 27.3333 32 26.8C31.3333 26.2667 30.6667 26 30 26C28.8 26 27.8667 26.3333 27.2 27C26.5333 27.6667 26.1333 28.4667 26 29.4C25.2 29.8 24.5333 30.3333 24 31C23.4667 31.6667 23.1333 32.4667 23 33.4C22.2 33.8 21.4667 34.3333 20.8 35C20.1333 35.6667 19.6667 36.4667 19.4 37.4C20.2 36.2 21.3333 35.3333 22.8 34.8C24.2667 34.2667 25.7333 34 27.2 34C28.6667 34 30.1333 34.2667 31.6 34.8C33.0667 35.3333 34.2 36.2 35 37.4C35.8 38.6 36.2 39.9333 36.2 41.4C36.2 42.8667 35.8 44.2 35 45.4C36.4 44.6 37.4667 43.4667 38.2 42C38.9333 40.5333 39.3 38.9333 39.3 37.2C39.3 35.4667 38.9333 33.8667 38.2 32.4C37.4667 30.9333 36.4 29.8 35 29C35.6 28.6667 36 28.3333 36 28Z"
+                                        fill="var(--primary)" fill-opacity="0.1" />
+                                    <path
+                                        d="M32 28C34.2091 28 36 26.2091 36 24C36 21.7909 34.2091 20 32 20C30.8954 20 30 20.8954 30 22C30 23.1046 30.8954 24 32 24C33.1046 24 34 24.8954 34 26C34 27.1046 33.1046 28 32 28Z"
+                                        fill="var(--primary)" />
+                                    <path
+                                        d="M24 32C26.2091 32 28 30.2091 28 28C28 25.7909 26.2091 24 24 24C21.7909 24 20 25.7909 20 28C20 30.2091 21.7909 32 24 32Z"
+                                        fill="var(--primary)" />
+                                    <path
+                                        d="M16 36C18.2091 36 20 34.2091 20 32C20 29.7909 18.2091 28 16 28C13.7909 28 12 29.7909 12 32C12 34.2091 13.7909 36 16 36Z"
+                                        fill="var(--primary)" />
+                                </svg>
+                            </div>
+                            <h3 class="h4 mb-3">Cloud & DevOps</h3>
+                            <p class="text-muted-custom mb-4">Infrastructure automation and cloud-native solutions for
+                                seamless scalability.</p>
+                            <a href="#cloud-devops" class="service-link stretched-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card card-tech h-100" role="link" tabindex="0" data-href="#security">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M24 4L38 10V22C38 30.5 32 38 24 42C16 38 10 30.5 10 22V10L24 4Z"
+                                        fill="var(--accent)" fill-opacity="0.1" />
+                                    <path d="M24 4L38 10V22C38 30.5 32 38 24 42C16 38 10 30.5 10 22V10L24 4Z"
+                                        stroke="var(--accent)" stroke-width="2" />
+                                    <rect x="20" y="22" width="8" height="12" rx="1" fill="var(--accent)" />
+                                    <path d="M24 18C26.2091 18 28 19.7909 28 22V24H20V22C20 19.7909 21.7909 18 24 18Z"
+                                        fill="var(--accent)" />
+                                    <circle cx="24" cy="14" r="2" fill="var(--accent)" />
+                                </svg>
+                            </div>
+                            <h3 class="h4 mb-3">Security</h3>
+                            <p class="text-muted-custom mb-4">Comprehensive security solutions protecting your digital
+                                assets and data.</p>
+                            <a href="#security" class="service-link stretched-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Low-code -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card card-tech h-100" role="link" tabindex="0" data-href="#low-code">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect x="8" y="12" width="32" height="24" rx="2" fill="var(--primary)"
+                                        fill-opacity="0.1" />
+                                    <rect x="12" y="16" width="8" height="4" rx="1" fill="var(--primary)" />
+                                    <rect x="22" y="16" width="8" height="4" rx="1" fill="var(--primary)" />
+                                    <rect x="32" y="16" width="4" height="4" rx="1" fill="var(--primary)" />
+                                    <rect x="12" y="22" width="12" height="4" rx="1" fill="var(--primary)" />
+                                    <rect x="26" y="22" width="10" height="4" rx="1" fill="var(--primary)" />
+                                    <rect x="12" y="28" width="6" height="4" rx="1" fill="var(--primary)" />
+                                    <rect x="20" y="28" width="16" height="4" rx="1" fill="var(--primary)" />
+                                </svg>
+                            </div>
+                            <h3 class="h4 mb-3">Low-code</h3>
+                            <p class="text-muted-custom mb-4">Rapid application development with visual interfaces and
+                                minimal coding.</p>
+                            <a href="#low-code" class="service-link stretched-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI/UX -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card card-tech h-100" role="link" tabindex="0" data-href="#ui-ux">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-4">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect x="12" y="12" width="24" height="24" rx="2" fill="var(--accent)"
+                                        fill-opacity="0.1" />
+                                    <circle cx="18" cy="18" r="2" fill="var(--accent)" />
+                                    <circle cx="24" cy="18" r="2" fill="var(--accent)" />
+                                    <circle cx="30" cy="18" r="2" fill="var(--accent)" />
+                                    <rect x="18" y="24" width="12" height="2" rx="1" fill="var(--accent)" />
+                                    <rect x="16" y="28" width="16" height="2" rx="1" fill="var(--accent)" />
+                                    <rect x="14" y="32" width="20" height="2" rx="1" fill="var(--accent)" />
+                                </svg>
+                            </div>
+                            <h3 class="h4 mb-3">UI/UX</h3>
+                            <p class="text-muted-custom mb-4">User-centered design creating intuitive and engaging
+                                digital experiences.</p>
+                            <a href="#ui-ux" class="service-link stretched-link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section py-5 bg-surface" aria-labelledby="industries-heading">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <p  style="font-size: 2rem;"  id="industries-heading" class="display-5 fw-bold mb-3">Industries We Serve</p>
+                    <p class="lead text-muted-custom">Tailored solutions for diverse industry challenges</p>
+                </div>
+            </div>
+
+            <!-- Industries Carousel -->
+            <div class="row">
+                <div class="col-12">
+                    <div id="industriesCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#industriesCarousel" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#industriesCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#industriesCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+
+                        <!-- Carousel Inner -->
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active">
+                                <div class="row g-4">
+                                    <!-- Healthcare -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--primary)" fill-opacity="0.1" />
+                                                        <path d="M16 16H24M20 12V20" stroke="var(--primary)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                        <rect x="12" y="24" width="4" height="4" rx="1"
+                                                            fill="var(--primary)" />
+                                                        <rect x="18" y="24" width="4" height="4" rx="1"
+                                                            fill="var(--primary)" />
+                                                        <rect x="24" y="24" width="4" height="4" rx="1"
+                                                            fill="var(--primary)" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Healthcare</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• Telemedicine platforms</li>
+                                                    <li class="mb-2">• EHR system integration</li>
+                                                    <li class="mb-2">• Patient data analytics</li>
+                                                    <li class="mb-0">• Medical IoT solutions</li>
+                                                </ul>
+                                                <a href="#healthcare-projects"
+                                                    class="btn btn-outline-primary btn-sm">See projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Finance -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--accent)" fill-opacity="0.1" />
+                                                        <circle cx="20" cy="20" r="6" stroke="var(--accent)"
+                                                            stroke-width="2" />
+                                                        <path d="M20 16V24M16 20H24" stroke="var(--accent)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                        <path d="M14 28H26" stroke="var(--accent)" stroke-width="2"
+                                                            stroke-linecap="round" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Finance</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• Digital banking apps</li>
+                                                    <li class="mb-2">• Fraud detection systems</li>
+                                                    <li class="mb-2">• Trading platforms</li>
+                                                    <li class="mb-0">• Blockchain solutions</li>
+                                                </ul>
+                                                <a href="#finance-projects" class="btn btn-outline-primary btn-sm">See
+                                                    projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Retail -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--primary)" fill-opacity="0.1" />
+                                                        <path d="M14 16L16 28M20 16L18 28M26 16L24 28"
+                                                            stroke="var(--primary)" stroke-width="2"
+                                                            stroke-linecap="round" />
+                                                        <circle cx="16" cy="20" r="1" fill="var(--primary)" />
+                                                        <circle cx="20" cy="20" r="1" fill="var(--primary)" />
+                                                        <circle cx="24" cy="20" r="1" fill="var(--primary)" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Retail</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• E-commerce platforms</li>
+                                                    <li class="mb-2">• Inventory management</li>
+                                                    <li class="mb-2">• Customer analytics</li>
+                                                    <li class="mb-0">• AR shopping experiences</li>
+                                                </ul>
+                                                <a href="#retail-projects" class="btn btn-outline-primary btn-sm">See
+                                                    projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <div class="row g-4">
+                                    <!-- Telecom -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--accent)" fill-opacity="0.1" />
+                                                        <path d="M16 16L24 24M24 16L16 24" stroke="var(--accent)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                        <circle cx="20" cy="20" r="4" stroke="var(--accent)"
+                                                            stroke-width="2" />
+                                                        <path d="M14 28H26" stroke="var(--accent)" stroke-width="2"
+                                                            stroke-linecap="round" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Telecom</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• 5G network solutions</li>
+                                                    <li class="mb-2">• Customer service AI</li>
+                                                    <li class="mb-2">• Billing systems</li>
+                                                    <li class="mb-0">• Network monitoring</li>
+                                                </ul>
+                                                <a href="#telecom-projects" class="btn btn-outline-primary btn-sm">See
+                                                    projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Manufacturing -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--primary)" fill-opacity="0.1" />
+                                                        <rect x="14" y="18" width="4" height="4" rx="1"
+                                                            fill="var(--primary)" />
+                                                        <rect x="22" y="18" width="4" height="4" rx="1"
+                                                            fill="var(--primary)" />
+                                                        <path d="M18 22V26M22 22V26" stroke="var(--primary)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                        <path d="M16 16L14 12M24 16L26 12" stroke="var(--primary)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Manufacturing</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• Smart factory IoT</li>
+                                                    <li class="mb-2">• Supply chain optimization</li>
+                                                    <li class="mb-2">• Quality control AI</li>
+                                                    <li class="mb-0">• Predictive maintenance</li>
+                                                </ul>
+                                                <a href="#manufacturing-projects"
+                                                    class="btn btn-outline-primary btn-sm">See projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Education -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--accent)" fill-opacity="0.1" />
+                                                        <path d="M16 20L20 16L24 20L20 24L16 20Z" stroke="var(--accent)"
+                                                            stroke-width="2" />
+                                                        <path d="M20 16V12" stroke="var(--accent)" stroke-width="2"
+                                                            stroke-linecap="round" />
+                                                        <circle cx="20" cy="28" r="1" fill="var(--accent)" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Education</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• Learning management systems</li>
+                                                    <li class="mb-2">• Virtual classroom platforms</li>
+                                                    <li class="mb-2">• Student analytics</li>
+                                                    <li class="mb-0">• Adaptive learning AI</li>
+                                                </ul>
+                                                <a href="#education-projects" class="btn btn-outline-primary btn-sm">See
+                                                    projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="carousel-item">
+                                <div class="row g-4">
+                                    <!-- Logistics -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--primary)" fill-opacity="0.1" />
+                                                        <path d="M14 20H26M14 24H22" stroke="var(--primary)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                        <circle cx="16" cy="28" r="2" stroke="var(--primary)"
+                                                            stroke-width="2" />
+                                                        <circle cx="24" cy="28" r="2" stroke="var(--primary)"
+                                                            stroke-width="2" />
+                                                        <path d="M12 16L16 12M28 16L24 12" stroke="var(--primary)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Logistics</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• Route optimization</li>
+                                                    <li class="mb-2">• Fleet management</li>
+                                                    <li class="mb-2">• Warehouse automation</li>
+                                                    <li class="mb-0">• Real-time tracking</li>
+                                                </ul>
+                                                <a href="#logistics-projects" class="btn btn-outline-primary btn-sm">See
+                                                    projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Energy -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--accent)" fill-opacity="0.1" />
+                                                        <path d="M20 12V28M16 16L20 12L24 16L20 20L16 16Z"
+                                                            stroke="var(--accent)" stroke-width="2"
+                                                            stroke-linecap="round" />
+                                                        <path d="M16 24L20 28L24 24" stroke="var(--accent)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Energy</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• Smart grid management</li>
+                                                    <li class="mb-2">• Renewable energy monitoring</li>
+                                                    <li class="mb-2">• Predictive maintenance</li>
+                                                    <li class="mb-0">• Energy consumption analytics</li>
+                                                </ul>
+                                                <a href="#energy-projects" class="btn btn-outline-primary btn-sm">See
+                                                    projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Insurance -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="industry-card card-tech h-100">
+                                            <div class="card-body p-4">
+                                                <div class="industry-icon mb-3">
+                                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <rect x="8" y="12" width="24" height="16" rx="2"
+                                                            fill="var(--primary)" fill-opacity="0.1" />
+                                                        <path d="M16 16L24 24M24 16L16 24" stroke="var(--primary)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                        <circle cx="20" cy="20" r="4" stroke="var(--primary)"
+                                                            stroke-width="2" />
+                                                        <path d="M20 12V16M20 24V28" stroke="var(--primary)"
+                                                            stroke-width="2" stroke-linecap="round" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="h5 mb-3">Insurance</h3>
+                                                <ul class="industry-use-cases list-unstyled mb-4">
+                                                    <li class="mb-2">• Claims processing AI</li>
+                                                    <li class="mb-2">• Risk assessment platforms</li>
+                                                    <li class="mb-2">• Customer portal apps</li>
+                                                    <li class="mb-0">• Fraud detection systems</li>
+                                                </ul>
+                                                <a href="#insurance-projects" class="btn btn-outline-primary btn-sm">See
+                                                    projects</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#industriesCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#industriesCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5 bg-surface" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <p  style="font-size: 2rem;"  id="testimonials-heading" class="display-5 fw-bold mb-3">What Our Clients Say</p>
+                    <p class="lead text-muted-custom">Trusted by innovative companies worldwide</p>
+                </div>
+            </div>
+
+            <!-- Testimonials Carousel -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Testimonial 1"></button>
+                            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1"
+                                aria-label="Testimonial 2"></button>
+                            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2"
+                                aria-label="Testimonial 3"></button>
+                        </div>
+
+                        <!-- Carousel Inner -->
+                        <div class="carousel-inner">
+                            <!-- Testimonial 1 -->
+                            <div class="carousel-item active">
+                                <div class="testimonial-card card-tech text-center p-5 mx-auto">
+                                    <div class="testimonial-content">
+                                        <div class="quote-icon mb-4">
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path d="M16 12H24L20 20V36H12V20L16 12Z" fill="var(--primary)"
+                                                    fill-opacity="0.1" />
+                                                <path d="M32 12H40L36 20V36H28V20L32 12Z" fill="var(--primary)"
+                                                    fill-opacity="0.1" />
+                                                <path d="M20 20H16L18 18" stroke="var(--primary)" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M36 20H32L34 18" stroke="var(--primary)" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <blockquote class="testimonial-quote mb-4">
+                                            <p class="fs-5 fw-light text-muted-custom">"The team delivered exceptional
+                                                results, transforming our legacy systems into a modern, scalable
+                                                platform.
+                                                Their expertise in cloud architecture and attention to detail exceeded
+                                                our
+                                                expectations."</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <img src="assets/images/testimonials/sarah-johnson.jpg" alt="Sarah Johnson"
+                                                class="testimonial-avatar rounded-circle mb-3" width="80" height="80">
+                                            <div class="author-info">
+                                                <h4 class="h5 mb-1">Sarah Johnson</h4>
+                                                <p class="text-muted-custom mb-0">CTO, TechInnovate Inc.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="carousel-item">
+                                <div class="testimonial-card card-tech text-center p-5 mx-auto">
+                                    <div class="testimonial-content">
+                                        <div class="quote-icon mb-4">
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path d="M16 12H24L20 20V36H12V20L16 12Z" fill="var(--primary)"
+                                                    fill-opacity="0.1" />
+                                                <path d="M32 12H40L36 20V36H28V20L32 12Z" fill="var(--primary)"
+                                                    fill-opacity="0.1" />
+                                                <path d="M20 20H16L18 18" stroke="var(--primary)" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M36 20H32L34 18" stroke="var(--primary)" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <blockquote class="testimonial-quote mb-4">
+                                            <p class="fs-5 fw-light text-muted-custom">"Outstanding partnership from
+                                                start
+                                                to finish. They understood our complex requirements and delivered a
+                                                solution
+                                                that not only met but surpassed our business objectives. Highly
+                                                recommended!"</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <img src="assets/images/testimonials/michael-chen.jpg" alt="Michael Chen"
+                                                class="testimonial-avatar rounded-circle mb-3" width="80" height="80">
+                                            <div class="author-info">
+                                                <h4 class="h5 mb-1">Michael Chen</h4>
+                                                <p class="text-muted-custom mb-0">Product Director, GlobalRetail Co.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="carousel-item">
+                                <div class="testimonial-card card-tech text-center p-5 mx-auto">
+                                    <div class="testimonial-content">
+                                        <div class="quote-icon mb-4">
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path d="M16 12H24L20 20V36H12V20L16 12Z" fill="var(--primary)"
+                                                    fill-opacity="0.1" />
+                                                <path d="M32 12H40L36 20V36H28V20L32 12Z" fill="var(--primary)"
+                                                    fill-opacity="0.1" />
+                                                <path d="M20 20H16L18 18" stroke="var(--primary)" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M36 20H32L34 18" stroke="var(--primary)" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <blockquote class="testimonial-quote mb-4">
+                                            <p class="fs-5 fw-light text-muted-custom">"The AI implementation
+                                                revolutionized
+                                                our data analytics capabilities. Their team's technical expertise and
+                                                collaborative approach made the entire process seamless and highly
+                                                effective."</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <img src="assets/images/testimonials/emily-rodriguez.jpg"
+                                                alt="Emily Rodriguez" class="testimonial-avatar rounded-circle mb-3"
+                                                width="80" height="80">
+                                            <div class="author-info">
+                                                <h4 class="h5 mb-1">Emily Rodriguez</h4>
+                                                <p class="text-muted-custom mb-0">Head of Data Science, HealthTech
+                                                    Solutions
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous testimonial</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next testimonial</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos Section -->
+    <section class="clients-section py-5" aria-labelledby="clients-heading">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <p style="font-size: 2rem;" clients-heading" class="display-5 fw-bold mb-3">Trusted By Industry
+                        Leaders</p>
+                    <p class="lead text-muted-custom">Partnering with innovative companies worldwide</p>
+                </div>
+            </div>
+
+            <!-- Client Logos Carousel -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="clients-carousel-wrapper" role="region" aria-labelledby="clients-heading">
+                        <div class="clients-carousel-track" id="clientsCarousel">
+                            <!-- Client Logos - Initial Set -->
+                            <div class="client-logo">
+                                <img src="assets/images/clients/techcorp.svg" alt="TechCorp" class="img-fluid"
+                                    loading="lazy">
+                            </div>
+                            <div class="client-logo">
+                                <img src="assets/images/clients/innovate-labs.svg" alt="Innovate Labs" class="img-fluid"
+                                    loading="lazy">
+                            </div>
+                            <div class="client-logo">
+                                <img src="assets/images/clients/global-bank.svg" alt="Global Bank" class="img-fluid"
+                                    loading="lazy">
+                            </div>
+                            <div class="client-logo">
+                                <img src="assets/images/clients/health-plus.svg" alt="Health Plus" class="img-fluid"
+                                    loading="lazy">
+                            </div>
+                            <div class="client-logo">
+                                <img src="assets/images/clients/retail-pro.svg" alt="Retail Pro" class="img-fluid"
+                                    loading="lazy">
+                            </div>
+                            <div class="client-logo">
+                                <img src="assets/images/clients/future-tech.svg" alt="Future Tech" class="img-fluid"
+                                    loading="lazy">
+                            </div>
+                            <div class="client-logo">
+                                <img src="assets/images/clients/cloud-systems.svg" alt="Cloud Systems" class="img-fluid"
+                                    loading="lazy">
+                            </div>
+                            <div class="client-logo">
+                                <img src="assets/images/clients/data-wise.svg" alt="Data Wise" class="img-fluid"
+                                    loading="lazy">
+                            </div>
+
+                            <!-- Duplicated for seamless loop (will be added by JS) -->
+                        </div>
+
+                        <!-- Fallback for no-JS -->
+                        <noscript>
+                            <style>
+                                .clients-carousel-track {
+                                    animation: scroll-logos 30s linear infinite;
+                                    display: flex;
+                                    flex-wrap: nowrap;
+                                }
+
+                                @keyframes scroll-logos {
+                                    0% {
+                                        transform: translateX(0);
+                                    }
+
+                                    100% {
+                                        transform: translateX(-50%);
+                                    }
+                                }
+                            </style>
+                        </noscript>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us the Top Choice Section -->
+    <section class="rw-top-choice-section">
+        <div class="container">
+            <div class="rw-section-header">
+                <h2 class="rw-section-title">What Makes Us the Top Choice</h2>
+            </div>
+
+            <div class="rw-features-grid">
+                <!-- Feature 1 -->
+                <div class="rw-feature-card">
+                    <div class="rw-feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="rw-feature-content">
+                        <h3 class="rw-feature-title">Precision-Built for Product Success</h3>
+
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="rw-feature-card">
+                    <div class="rw-feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="rw-feature-content">
+                        <h3 class="rw-feature-title">Dedicated Cofs for Scalable Delivery</h3>
+
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="rw-feature-card">
+                    <div class="rw-feature-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="rw-feature-content">
+                        <h3 class="rw-feature-title">Cross-Functional, Outcome-Focused Teams</h3>
+
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="rw-feature-card">
+                    <div class="rw-feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <div class="rw-feature-content">
+                        <h3 class="rw-feature-title">Robust Architecture, Built to Scale</h3>
+
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="rw-feature-card">
+                    <div class="rw-feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="rw-feature-content">
+                        <h3 class="rw-feature-title">Impeccable Quality, On-Time Delivery</h3>
+
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="rw-feature-card">
+                    <div class="rw-feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="rw-feature-content">
+                        <h3 class="rw-feature-title">Human-Centric Design & UX Excellence</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animation for elements when they come into view
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe feature cards for animation
+            const featureCards = document.querySelectorAll('.rw-feature-card');
+            featureCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+    <!-- Technologies and Platforms Section -->
+    <section class="rw-tech-section">
+        <div class="container">
+            <div class="rw-tech-header">
+                <h2 class="rw-tech-title">Technologies and Platforms We Use</h2>
+
+            </div>
+
+            <!-- Main Services Row -->
+            <div class="rw-services-row">
+                <div class="rw-service-item active" data-category="tech">Tech</div>
+                <div class="rw-service-item" data-category="frontend">Frontend</div>
+                <div class="rw-service-item" data-category="backend">Backend</div>
+                <div class="rw-service-item" data-category="mobile">Mobile</div>
+                <div class="rw-service-item" data-category="database">Database</div>
+                <div class="rw-service-item" data-category="framework">Framework</div>
+                <div class="rw-service-item" data-category="cloud">Cloud</div>
+                <div class="rw-service-item" data-category="devops">DevOps</div>
+                <div class="rw-service-item" data-category="ecommerce">Ecommerce</div>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="rw-divider"></div>
+
+            <!-- Subservices Container -->
+            <div class="rw-subservices-container">
+                <!-- Tech Subservices -->
+                <div class="rw-category-content active" data-category="tech">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item rw-tech-gradient">
+                            <div class="rw-subservice-tech-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">AI Model</h4>
+                        </div>
+                        <div class="rw-subservice-item rw-tech-gradient">
+                            <div class="rw-subservice-tech-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Gen AI</h4>
+                        </div>
+                        <div class="rw-subservice-item rw-tech-gradient">
+                            <div class="rw-subservice-tech-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Machine Learning</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend Subservices -->
+                <div class="rw-category-content" data-category="frontend">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">HTML5</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">CSS</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">JavaScript</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-angular"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Angular</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">React</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-vuejs"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Vue</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Subservices -->
+                <div class="rw-category-content" data-category="backend">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Python</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">.NET</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-php"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">PHP</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Java</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Node.js</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Subservices -->
+                <div class="rw-category-content" data-category="mobile">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-android"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Android</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fas fa-mobile"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Flutter</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Subservices -->
+                <div class="rw-category-content" data-category="database">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">MySQL</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">SQLite</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Oracle</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Firebase</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">MongoDB</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Framework Subservices -->
+                <div class="rw-category-content" data-category="framework">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">MEAN</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-laravel"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Laravel</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Django</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Subservices -->
+                <div class="rw-category-content" data-category="cloud">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">AWS</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Azure</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Google Cloud</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps Subservices -->
+                <div class="rw-category-content" data-category="devops">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Kubernetes</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Docker</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Azure DevOps</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ecommerce Subservices -->
+                <div class="rw-category-content" data-category="ecommerce">
+                    <div class="rw-subservices-grid">
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fab fa-shopify"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Shopify</h4>
+                        </div>
+                        <div class="rw-subservice-item">
+                            <div class="rw-subservice-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <h4 class="rw-subservice-name">Magento</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const serviceItems = document.querySelectorAll('.rw-service-item');
+            const categoryContents = document.querySelectorAll('.rw-category-content');
+
+            // Hide all category contents except the first one
+            categoryContents.forEach(content => {
+                if (!content.classList.contains('active')) {
+                    content.style.display = 'none';
+                }
+            });
+
+            // Add click event to service items
+            serviceItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const category = this.getAttribute('data-category');
+
+                    // Remove active class from all items
+                    serviceItems.forEach(i => i.classList.remove('active'));
+
+                    // Add active class to clicked item
+                    this.classList.add('active');
+
+                    // Hide all category contents
+                    categoryContents.forEach(content => {
+                        content.style.display = 'none';
+                        content.classList.remove('active');
+                    });
+
+                    // Show selected category content
+                    const targetContent = document.querySelector(`.rw-category-content[data-category="${category}"]`);
+                    if (targetContent) {
+                        targetContent.style.display = 'block';
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Contact CTA Section -->
+    <section class="rw-contact-section">
+        <div class="container">
+            <div class="rw-contact-content">
+                <h2 class="rw-contact-title">Ready to Transform Your Business?</h2>
+                <p class="rw-contact-subtitle">Build Scalable Software With Us</p>
+
+                <div class="rw-contact-buttons">
+                    <a href="#contact" class="rw-contact-btn rw-primary-btn">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule a Free Consultation
+                    </a>
+
+                </div>
+
+                <div class="cta-features">
+                    <div class="d-flex flex-wrap gap-4">
+                        <div class="feature-item d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2 text-accent"></i>
+                            <span>Free consultation</span>
+                        </div>
+                        <div class="feature-item d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2 text-accent"></i>
+                            <span>No obligation quote</span>
+                        </div>
+                        <div class="feature-item d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2 text-accent"></i>
+                            <span>Expert team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Blog Section -->
+    <section class="rw-blog-section">
+        <div class="container">
+            <div class="rw-blog-header">
+                <h2 class="rw-blog-title">Latest Insights</h2>
+                <p class="rw-blog-subtitle">Stay updated with our latest articles</p>
+            </div>
+
+            <div class="rw-blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="rw-blog-card">
+                    <div class="rw-blog-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="AI Revolution">
+                    </div>
+                    <div class="rw-blog-content">
+                        <h3 class="rw-blog-post-title">AI in Enterprise Solutions</h3>
+                        <a href="#" class="rw-read-more">Read More </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="rw-blog-card">
+                    <div class="rw-blog-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Cloud Native">
+                    </div>
+                    <div class="rw-blog-content">
+                        <h3 class="rw-blog-post-title">Cloud-Native Applications</h3>
+                        <a href="#" class="rw-read-more">Read More </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="rw-blog-card">
+                    <div class="rw-blog-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Digital Transformation">
+                    </div>
+                    <div class="rw-blog-content">
+                        <h3 class="rw-blog-post-title">Digital Transformation 2024</h3>
+                        <a href="#" class="rw-read-more">Read More </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Main content area -->
+    <main>
+        <!-- Your page content goes here -->
+        <div style="padding-top: 100px;">
+            <!-- Spacer to demonstrate sticky header -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Company</h5>
+                    <p class="text-muted-custom mb-3">
+                        Transforming businesses through innovative digital solutions since 2010.
+                    </p>
+                    <address class="text-muted-custom">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        123 Innovation Drive<br>
+                        San Francisco, CA 94107
+                    </address>
+                </div>
+
+                <!-- Services Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Web Development</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Mobile Apps</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">UI/UX Design</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Digital Strategy</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Cloud Solutions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Case Studies</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Whitepapers</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Webinars</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Documentation</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Contact</h5>
+                    <ul class="list-unstyled text-muted-custom">
+                        <li class="mb-2">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:hello@company.com"
+                                class="text-muted-custom text-decoration-none">hello@company.com</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            <a href="tel:+1-555-123-4567" class="text-muted-custom text-decoration-none">+1 (555)
+                                123-4567</a>
+                        </li>
+                    </ul>
+
+                    <!-- Newsletter Signup -->
+                    <div class="mt-4">
+                        <h6 class="mb-2">Stay Updated</h6>
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-sm" placeholder="Your email"
+                                aria-label="Your email">
+                            <button class="btn btn-accent btn-sm" type="button">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-4" style="border-color: var(--muted);">
+
+            <!-- Bottom row -->
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted-custom mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item mx-2">•</li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item mx-2">•</li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <div class="social-icons">
+                        <a href="#" class="text-muted-custom me-3" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom me-3" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom me-3" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Sticky Header JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbar = document.getElementById('mainNav');
+
+            function updateNavbar() {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                    navbar.style.padding = '0.5rem 0';
+                    navbar.style.backdropFilter = 'blur(10px)';
+                    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    navbar.classList.remove('scrolled');
+                    navbar.style.padding = '1rem 0';
+                    navbar.style.backdropFilter = 'none';
+                    navbar.style.backgroundColor = 'transparent';
+                }
+            }
+
+            // Initial check
+            updateNavbar();
+
+            // Listen for scroll events
+            window.addEventListener('scroll', updateNavbar);
+        });
+    </script>
+
+    <!-- Add this to your styles.css for the sticky header effects -->
+    <style>
+        #mainNav {
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        #mainNav.scrolled {
+            box-shadow: 0 2px 20px rgba(10, 35, 64, 0.1);
+        }
+
+        #mainNav.scrolled .navbar-brand img {
+            height: 35px;
+            transition: height 0.3s ease;
+        }
+
+        .navbar-brand img {
+            transition: height 0.3s ease;
+        }
+
+        /* Ensure proper spacing for fixed navbar */
+        main {
+            padding-top: 80px;
+        }
+
+        /* Footer link hover effects */
+        footer a.text-muted-custom:hover {
+            color: var(--accent) !important;
+        }
+
+        /* Social icons hover */
+        .social-icons a:hover {
+            color: var(--accent) !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</body>
+
+</html>

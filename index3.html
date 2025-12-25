@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS - Technology Solutions</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a202c;
+            --light: #f8fafc;
+            --muted: #718096;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--light);
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* Header & Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            padding: 0.5rem 0 !important;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Navigation Links */
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Two-Column Services Dropdown */
+        .services-dropdown {
+            min-width: 800px;
+            padding: 0;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            animation: dropdownFadeIn 0.3s ease;
+        }
+
+        @keyframes dropdownFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .services-container {
+            display: flex;
+            min-height: 400px;
+        }
+
+        /* Left Column - Main Services */
+        .main-services {
+            flex: 0 0 300px;
+            background: linear-gradient(135deg, #f8fafc, #edf2f7);
+            padding: 2rem;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .main-services-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .main-service-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .main-service-item:hover,
+        .main-service-item.active {
+            background: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            transform: translateX(5px);
+        }
+
+        .main-service-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .main-service-content {
+            flex: 1;
+        }
+
+        .main-service-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .main-service-arrow {
+            color: var(--muted);
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .main-service-item.active .main-service-arrow {
+            color: var(--primary);
+            transform: translateX(3px);
+        }
+
+        /* Right Column - Sub Services */
+        .sub-services {
+            flex: 1;
+            padding: 2rem;
+            background: white;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sub-services-header {
+            margin-bottom: 2rem;
+        }
+
+        .sub-services-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-services-description {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .sub-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .sub-service-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+        }
+
+        .sub-service-item:hover {
+            background: white;
+            border-color: var(--primary);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .sub-service-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .sub-service-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .sub-service-description {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* Dropdown Toggle */
+        .dropdown-toggle::after {
+            display: inline-block;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            content: "▾";
+            border: none;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle.show::after {
+            transform: rotate(180deg);
+        }
+
+        /* Primary Button */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Mobile Navigation */
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 991.98px) {
+            .services-dropdown {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .services-container {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .main-services {
+                flex: none;
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .sub-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar-collapse {
+                background: white;
+                border-radius: 12px;
+                margin-top: 1rem;
+                padding: 1rem;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .nav-link {
+                margin: 0.25rem 0;
+                text-align: center;
+            }
+
+            .btn-primary {
+                width: 100%;
+                margin-top: 0.5rem;
+                text-align: center;
+            }
+        }
+
+        /* Body padding to account for fixed header */
+        body {
+            padding-top: 80px;
+        }
+
+        /* Demo content styles */
+        .demo-content {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .demo-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content p {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-cube me-2"></i>NEXUS
+                </a>
+
+                <!-- Mobile hamburger -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Desktop navigation -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu services-dropdown">
+                                <div class="services-container">
+                                    <!-- Left Column - Main Services -->
+                                    <div class="main-services">
+                                        <div class="main-services-title">Our Services</div>
+
+                                        <div class="main-service-item active" data-service="product-engineering">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-cube"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Product Engineering & SaaS</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="enterprise-software">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-building"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Enterprise Software & Applications</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="cloud-devops">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-cloud"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Cloud, DevOps & Security</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="ai-data">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-brain"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">AI & Data Solutions</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="low-code">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Low-Code/No-Code Development</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="staff-augmentation">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Staff Augmentation</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Column - Sub Services -->
+                                    <div class="sub-services">
+                                        <div class="sub-services-header">
+                                            <h3 class="sub-services-title">Product Engineering & SaaS</h3>
+                                            <p class="sub-services-description">End-to-end development of scalable
+                                                digital products and software-as-a-service platforms</p>
+                                        </div>
+
+                                        <div class="sub-services-grid">
+                                            <div class="sub-service-item">
+                                                <div class="sub-service-icon">
+                                                    <i class="fas fa-laptop-code"></i>
+                                                </div>
+                                                <h4 class="sub-service-name">Web Application Development</h4>
+                                                <p class="sub-service-description">Responsive and performant web
+                                                    applications using modern frameworks</p>
+                                            </div>
+
+                                            <div class="sub-service-item">
+                                                <div class="sub-service-icon">
+                                                    <i class="fas fa-mobile-alt"></i>
+                                                </div>
+                                                <h4 class="sub-service-name">Mobile App Development</h4>
+                                                <p class="sub-service-description">Native and cross-platform mobile
+                                                    applications for iOS and Android</p>
+                                            </div>
+
+                                            <div class="sub-service-item">
+                                                <div class="sub-service-icon">
+                                                    <i class="fas fa-layer-group"></i>
+                                                </div>
+                                                <h4 class="sub-service-name">SaaS Platform Development</h4>
+                                                <p class="sub-service-description">Multi-tenant SaaS platforms with
+                                                    subscription management</p>
+                                            </div>
+
+                                            <div class="sub-service-item">
+                                                <div class="sub-service-icon">
+                                                    <i class="fas fa-cogs"></i>
+                                                </div>
+                                                <h4 class="sub-service-name">API Development & Integration</h4>
+                                                <p class="sub-service-description">RESTful APIs and third-party
+                                                    integrations</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="industries.html">Industries</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="work.html">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="careers.html">Careers</a>
+                        </li>
+                    </ul>
+
+                    <!-- Desktop CTA -->
+                    <a href="contact.html" class="btn btn-primary">Let's Talk</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <h1>Welcome to NEXUS</h1>
+        <p>Experience our advanced services dropdown navigation. Click on "Services" to see the two-column layout with
+            main services on the left and sub-services on the right.</p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript for Services Dropdown -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainServiceItems = document.querySelectorAll('.main-service-item');
+            const subServicesTitle = document.querySelector('.sub-services-title');
+            const subServicesDescription = document.querySelector('.sub-services-description');
+            const subServicesGrid = document.querySelector('.sub-services-grid');
+
+            // Service data
+            const servicesData = {
+                'product-engineering': {
+                    title: 'Product Engineering & SaaS',
+                    description: 'End-to-end development of scalable digital products and software-as-a-service platforms',
+                    subServices: [
+                        {
+                            icon: 'fas fa-laptop-code',
+                            name: 'Web Application Development',
+                            description: 'Responsive and performant web applications using modern frameworks'
+                        },
+                        {
+                            icon: 'fas fa-mobile-alt',
+                            name: 'Mobile App Development',
+                            description: 'Native and cross-platform mobile applications for iOS and Android'
+                        },
+                        {
+                            icon: 'fas fa-layer-group',
+                            name: 'SaaS Platform Development',
+                            description: 'Multi-tenant SaaS platforms with subscription management'
+                        },
+                        {
+                            icon: 'fas fa-cogs',
+                            name: 'API Development & Integration',
+                            description: 'RESTful APIs and third-party integrations'
+                        }
+                    ]
+                },
+                'enterprise-software': {
+                    title: 'Enterprise Software & Applications',
+                    description: 'Custom enterprise solutions for large-scale business operations',
+                    subServices: [
+                        {
+                            icon: 'fas fa-building',
+                            name: 'ERP Systems',
+                            description: 'Enterprise Resource Planning solutions'
+                        },
+                        {
+                            icon: 'fas fa-chart-line',
+                            name: 'Business Intelligence',
+                            description: 'Data analytics and reporting platforms'
+                        },
+                        {
+                            icon: 'fas fa-project-diagram',
+                            name: 'Workflow Automation',
+                            description: 'Business process automation systems'
+                        },
+                        {
+                            icon: 'fas fa-database',
+                            name: 'Legacy System Modernization',
+                            description: 'Upgrading outdated systems to modern platforms'
+                        }
+                    ]
+                },
+                'cloud-devops': {
+                    title: 'Cloud, DevOps & Security',
+                    description: 'Infrastructure automation and cloud-native security solutions',
+                    subServices: [
+                        {
+                            icon: 'fas fa-server',
+                            name: 'Cloud Migration',
+                            description: 'Seamless transition to cloud infrastructure'
+                        },
+                        {
+                            icon: 'fas fa-code-branch',
+                            name: 'DevOps Implementation',
+                            description: 'CI/CD pipelines and automation'
+                        },
+                        {
+                            icon: 'fas fa-shield-alt',
+                            name: 'Security Solutions',
+                            description: 'Comprehensive cybersecurity services'
+                        },
+                        {
+                            icon: 'fas fa-network-wired',
+                            name: 'Infrastructure as Code',
+                            description: 'Automated infrastructure management'
+                        }
+                    ]
+                },
+                'ai-data': {
+                    title: 'AI & Data Solutions',
+                    description: 'Intelligent solutions leveraging artificial intelligence and data analytics',
+                    subServices: [
+                        {
+                            icon: 'fas fa-brain',
+                            name: 'Machine Learning',
+                            description: 'Custom ML models and algorithms'
+                        },
+                        {
+                            icon: 'fas fa-robot',
+                            name: 'AI Implementation',
+                            description: 'AI-powered business solutions'
+                        },
+                        {
+                            icon: 'fas fa-chart-bar',
+                            name: 'Data Analytics',
+                            description: 'Business intelligence and insights'
+                        },
+                        {
+                            icon: 'fas fa-database',
+                            name: 'Big Data Solutions',
+                            description: 'Large-scale data processing systems'
+                        }
+                    ]
+                },
+                'low-code': {
+                    title: 'Low-Code/No-Code Development',
+                    description: 'Rapid application development with minimal coding',
+                    subServices: [
+                        {
+                            icon: 'fas fa-bolt',
+                            name: 'Rapid Prototyping',
+                            description: 'Quick MVP development and testing'
+                        },
+                        {
+                            icon: 'fas fa-puzzle-piece',
+                            name: 'Visual Development',
+                            description: 'Drag-and-drop interface building'
+                        },
+                        {
+                            icon: 'fas fa-tools',
+                            name: 'Custom Components',
+                            description: 'Extended functionality development'
+                        },
+                        {
+                            icon: 'fas fa-rocket',
+                            name: 'Accelerated Deployment',
+                            description: 'Faster time-to-market solutions'
+                        }
+                    ]
+                },
+                'staff-augmentation': {
+                    title: 'Staff Augmentation',
+                    description: 'Expert talent augmentation for your development teams',
+                    subServices: [
+                        {
+                            icon: 'fas fa-user-plus',
+                            name: 'Dedicated Developers',
+                            description: 'Full-time dedicated team members'
+                        },
+                        {
+                            icon: 'fas fa-users',
+                            name: 'Team Extension',
+                            description: 'Scalable team augmentation'
+                        },
+                        {
+                            icon: 'fas fa-graduation-cap',
+                            name: 'Expert Consultation',
+                            description: 'Technical guidance and mentorship'
+                        },
+                        {
+                            icon: 'fas fa-handshake',
+                            name: 'Project-based Staffing',
+                            description: 'Flexible staffing for specific projects'
+                        }
+                    ]
+                }
+            };
+
+            // Function to update sub-services
+            function updateSubServices(serviceKey) {
+                const service = servicesData[serviceKey];
+
+                if (service) {
+                    subServicesTitle.textContent = service.title;
+                    subServicesDescription.textContent = service.description;
+
+                    // Clear existing sub-services
+                    subServicesGrid.innerHTML = '';
+
+                    // Add new sub-services
+                    service.subServices.forEach(subService => {
+                        const subServiceItem = document.createElement('div');
+                        subServiceItem.className = 'sub-service-item';
+                        subServiceItem.innerHTML = `
+                            <div class="sub-service-icon">
+                                <i class="${subService.icon}"></i>
+                            </div>
+                            <h4 class="sub-service-name">${subService.name}</h4>
+                            <p class="sub-service-description">${subService.description}</p>
+                        `;
+                        subServicesGrid.appendChild(subServiceItem);
+                    });
+                }
+            }
+
+            // Add click event listeners to main service items
+            mainServiceItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Remove active class from all items
+                    mainServiceItems.forEach(i => i.classList.remove('active'));
+
+                    // Add active class to clicked item
+                    this.classList.add('active');
+
+                    // Update sub-services
+                    const serviceKey = this.getAttribute('data-service');
+                    updateSubServices(serviceKey);
+                });
+            });
+
+            // Add scroll effect to navbar
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

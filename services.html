@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Serve - RoadsWeb</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --success: #48bb78;
+            --warning: #ed8936;
+            --info: #4299e1;
+            --dark: #1a202c;
+            --light: #f8fafc;
+            --text: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            overflow-x: hidden;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        /* Floating Background Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(180deg);
+            }
+        }
+
+        /* Hero Section */
+        .industries-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+
+        .industries-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .industries-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .industries-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .industries-subtitle {
+            font-size: 1rem;
+            color: var(--dark);
+            opacity: 0.8;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* Industry Navigation */
+        .industry-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 12px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 8px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .nav-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-item {
+            flex: 0 0 auto;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary);
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Industries Grid */
+        .industries-grid {
+            padding: 60px 0;
+        }
+
+        .hexagon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .hexagon-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hexagon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .hexagon-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .hexagon-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .industry-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .hexagon-card:hover .industry-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .industry-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .industry-desc {
+            color: var(--text);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .industry-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .industry-features li {
+            padding: 6px 0;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+
+        .industry-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .industry-stats {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(240, 147, 251, 0.05));
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .stat-number-lg {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-desc {
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .industries-cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            color: var(--primary);
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text);
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 13px;
+            }
+
+            .industries-title {
+                font-size: 1.8rem;
+            }
+
+            .hexagon-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-title {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .nav-scroll {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 12px;
+            }
+
+            .industries-title {
+                font-size: 1.6rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hexagon-card {
+                padding: 25px 20px;
+            }
+
+            .industry-nav {
+                border-radius: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-cube me-2"></i>NEXUS
+                </a>
+
+                <!-- Mobile hamburger -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Desktop navigation -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu services-dropdown">
+                                <div class="services-container">
+                                    <!-- Left Column - Main Services -->
+                                    <div class="main-services">
+                                        <div style="margin-bottom:10px;" class="main-services-title">Our Services</div>
+
+                                        <div class="main-service-item active" data-service="product-engineering">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-cube"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Product Engineering & SaaS</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="enterprise-software">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-building"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Enterprise Software & Applications</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="cloud-devops">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-cloud"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Cloud, DevOps & Security</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="ai-data">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-brain"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">AI & Data Solutions</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="low-code">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Low-Code/No-Code Development</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="staff-augmentation">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Staff Augmentation</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Column - Sub Services -->
+                                    <div class="sub-services">
+                                        <div class="sub-services-header">
+                                            <h3 class="sub-services-title">Product Engineering & SaaS</h3>
+                                        </div>
+
+                                        <div class="sub-services-list"
+                                            style="display: flex; flex-direction: column; gap: 6px;">
+                                            <a href="web-development.html" class="sub-service-item"
+                                                style="display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;">
+                                                <h4 class="sub-service-name"
+                                                    style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                                                    Web Application Development
+                                                </h4>
+                                                <div class="sub-service-arrow"
+                                                    style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </a>
+
+                                            <a href="mobile-development.html" class="sub-service-item"
+                                                style="display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;">
+                                                <h4 class="sub-service-name"
+                                                    style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                                                    Mobile App Development
+                                                </h4>
+                                                <div class="sub-service-arrow"
+                                                    style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </a>
+
+                                            <a href="saas-development.html" class="sub-service-item"
+                                                style="display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;">
+                                                <h4 class="sub-service-name"
+                                                    style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                                                    SaaS Platform Development
+                                                </h4>
+                                                <div class="sub-service-arrow"
+                                                    style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </a>
+
+                                            <a href="api-development.html" class="sub-service-item"
+                                                style="display: flex; align-items: center; padding: 10px 16px; text-decoration: none; color: #1a202c; border-radius: 6px; transition: all 0.3s ease; gap: 12px;">
+                                                <h4 class="sub-service-name"
+                                                    style="margin: 0; font-size: 0.95rem; font-weight: 500; color: #1a202c; transition: color 0.3s ease;">
+                                                    API Development & Integration
+                                                </h4>
+                                                <div class="sub-service-arrow"
+                                                    style="margin-left: auto; color: #718096; font-size: 0.9rem; transition: all 0.3s ease;">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Industries</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="work.html">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="careers.html">Careers</a>
+                        </li>
+                    </ul>
+
+                    <!-- Desktop CTA -->
+                    <a href="contact.html" class="btn btn-primary">Let's Talk</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="industries-hero">
+        <div class="container">
+            <div class="industries-hero-content">
+                <div class="industries-badge">INDUSTRIES WE SERVE</div>
+                <h1 class="industries-title">Transforming Industries with Digital Innovation</h1>
+                <p class="industries-subtitle">
+                    We partner with businesses across diverse sectors to deliver cutting-edge
+                    technology solutions that drive growth, efficiency, and competitive advantage.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Navigation -->
+    <div class="container">
+        <div class="industry-nav">
+            <div class="nav-scroll">
+                <div class="nav-item active" data-industry="all">All Industries</div>
+                <div class="nav-item" data-industry="realestate">Real Estate</div>
+                <div class="nav-item" data-industry="fintech">FinTech</div>
+                <div class="nav-item" data-industry="hrtech">HRTech</div>
+                <div class="nav-item" data-industry="edtech">EdTech</div>
+                <div class="nav-item" data-industry="retail">Retail & eCommerce</div>
+                <div class="nav-item" data-industry="legaltech">LegalTech</div>
+                <div class="nav-item" data-industry="manufacturing">Smart Manufacturing</div>
+                <div class="nav-item" data-industry="healthcare">Healthcare</div>
+                <div class="nav-item" data-industry="cleantech">CleanTech</div>
+                <div class="nav-item" data-industry="insurtech">InsurTech</div>
+                <div class="nav-item" data-industry="travel">Travel & Hospitality</div>
+                <div class="nav-item" data-industry="software">Software & Hi-Tech</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industries Grid -->
+    <section class="industries-grid">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Industry Expertise</h2>
+                <p class="section-subtitle">Tailored digital solutions for every sector</p>
+            </div>
+
+            <div class="hexagon-grid">
+                <!-- Real Estate -->
+                <div class="hexagon-card" data-industry="realestate">
+                    <div class="industry-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="industry-title">Real Estate Tech</h3>
+                    <p class="industry-desc">
+                        Revolutionizing property management, virtual tours, and real estate transactions
+                        with cutting-edge technology solutions.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Virtual Property Tours</li>
+                        <li>Property Management Systems</li>
+                        <li>AI-powered Valuation</li>
+                        <li>Blockchain Transactions</li>
+                    </ul>
+                </div>
+
+                <!-- FinTech -->
+                <div class="hexagon-card" data-industry="fintech">
+                    <div class="industry-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="industry-title">Financial Technology</h3>
+                    <p class="industry-desc">
+                        Building secure, scalable fintech solutions including digital banking,
+                        payment processing, and financial analytics platforms.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Digital Banking Platforms</li>
+                        <li>Payment Processing Systems</li>
+                        <li>Fraud Detection AI</li>
+                        <li>Investment Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- HRTech -->
+                <div class="hexagon-card" data-industry="hrtech">
+                    <div class="industry-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="industry-title">HR Technology</h3>
+                    <p class="industry-desc">
+                        Transforming human resources with AI-driven recruitment, employee engagement
+                        platforms, and performance management systems.
+                    </p>
+                    <ul class="industry-features">
+                        <li>AI Recruitment Systems</li>
+                        <li>Employee Engagement Platforms</li>
+                        <li>Performance Analytics</li>
+                        <li>Learning Management</li>
+                    </ul>
+                </div>
+
+                <!-- EdTech -->
+                <div class="hexagon-card" data-industry="edtech">
+                    <div class="industry-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="industry-title">Education Technology</h3>
+                    <p class="industry-desc">
+                        Creating innovative learning platforms, virtual classrooms, and personalized
+                        educational experiences for modern learners.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Learning Management Systems</li>
+                        <li>Virtual Classroom Platforms</li>
+                        <li>Adaptive Learning AI</li>
+                        <li>Educational Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Retail & eCommerce -->
+                <div class="hexagon-card" data-industry="retail">
+                    <div class="industry-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="industry-title">Retail & eCommerce</h3>
+                    <p class="industry-desc">
+                        Building seamless shopping experiences with AI recommendations,
+                        inventory optimization, and omnichannel retail solutions.
+                    </p>
+                    <ul class="industry-features">
+                        <li>E-commerce Platforms</li>
+                        <li>AI Product Recommendations</li>
+                        <li>Inventory Management</li>
+                        <li>Customer Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- LegalTech -->
+                <div class="hexagon-card" data-industry="legaltech">
+                    <div class="industry-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="industry-title">Legal Technology</h3>
+                    <p class="industry-desc">
+                        Modernizing legal practices with document automation, case management
+                        systems, and AI-powered legal research tools.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Document Automation</li>
+                        <li>Case Management Systems</li>
+                        <li>Legal Research AI</li>
+                        <li>Compliance Monitoring</li>
+                    </ul>
+                </div>
+
+                <!-- Smart Manufacturing -->
+                <div class="hexagon-card" data-industry="manufacturing">
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="industry-title">Smart Manufacturing</h3>
+                    <p class="industry-desc">
+                        Driving Industry 4.0 with IoT integration, predictive maintenance,
+                        and automated production line optimization.
+                    </p>
+                    <ul class="industry-features">
+                        <li>IoT Sensor Integration</li>
+                        <li>Predictive Maintenance</li>
+                        <li>Production Optimization</li>
+                        <li>Quality Control Systems</li>
+                    </ul>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="hexagon-card" data-industry="healthcare">
+                    <div class="industry-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="industry-title">Healthcare Technology</h3>
+                    <p class="industry-desc">
+                        Revolutionizing patient care with telemedicine platforms, electronic
+                        health records, and AI-powered diagnostic systems.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Telemedicine Platforms</li>
+                        <li>Electronic Health Records</li>
+                        <li>AI Diagnostics</li>
+                        <li>Patient Management</li>
+                    </ul>
+                </div>
+
+                <!-- CleanTech -->
+                <div class="hexagon-card" data-industry="cleantech">
+                    <div class="industry-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="industry-title">Clean Technology</h3>
+                    <p class="industry-desc">
+                        Developing sustainable solutions for energy management, environmental
+                        monitoring, and green technology innovation.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Energy Management Systems</li>
+                        <li>Environmental Monitoring</li>
+                        <li>Sustainability Analytics</li>
+                        <li>Green Tech Solutions</li>
+                    </ul>
+                </div>
+
+                <!-- InsurTech -->
+                <div class="hexagon-card" data-industry="insurtech">
+                    <div class="industry-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="industry-title">Insurance Technology</h3>
+                    <p class="industry-desc">
+                        Modernizing insurance with automated claims processing, risk assessment
+                        algorithms, and digital policy management.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Automated Claims Processing</li>
+                        <li>Risk Assessment AI</li>
+                        <li>Digital Policy Management</li>
+                        <li>Customer Portal Solutions</li>
+                    </ul>
+                </div>
+
+                <!-- Travel & Hospitality -->
+                <div class="hexagon-card" data-industry="travel">
+                    <div class="industry-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="industry-title">Travel & Hospitality</h3>
+                    <p class="industry-desc">
+                        Enhancing travel experiences with booking platforms, customer service
+                        automation, and personalized travel recommendations.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Booking & Reservation Systems</li>
+                        <li>Customer Service Automation</li>
+                        <li>Personalized Recommendations</li>
+                        <li>Revenue Management</li>
+                    </ul>
+                </div>
+
+                <!-- Software & Hi-Tech -->
+                <div class="hexagon-card" data-industry="software">
+                    <div class="industry-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="industry-title">Software & Hi-Tech</h3>
+                    <p class="industry-desc">
+                        Powering technology companies with scalable software solutions,
+                        cloud infrastructure, and innovative product development.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Enterprise Software Development</li>
+                        <li>Cloud Infrastructure</li>
+                        <li>Product Innovation</li>
+                        <li>Technical Consulting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Stats -->
+    <section class="industry-stats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Industry Impact</h2>
+                <p class="section-subtitle">Driving digital transformation across sectors</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="stat-number-lg">150+</div>
+                    <div class="stat-desc">Industry Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-number-lg">45%</div>
+                    <div class="stat-desc">Average Efficiency Gain</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number-lg">12+</div>
+                    <div class="stat-desc">Industries Served</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number-lg">25</div>
+                    <div class="stat-desc">Industry Awards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="industries-cta">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="cta-title">Ready to Transform Your Industry?</h2>
+                <p class="cta-subtitle">
+                    Let's discuss how our industry-specific solutions can drive your digital transformation journey.
+                </p>
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-calendar-check"></i> Schedule Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Industry Navigation Filtering
+        const navItems = document.querySelectorAll('.nav-item');
+        const industryCards = document.querySelectorAll('.hexagon-card');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', function () {
+                // Remove active class from all items
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // Add active class to clicked item
+                this.classList.add('active');
+
+                const industry = this.getAttribute('data-industry');
+
+                // Filter cards
+                industryCards.forEach(card => {
+                    if (industry === 'all' || card.getAttribute('data-industry') === industry) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Animate stats when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = document.querySelectorAll('.stat-number-lg');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.textContent);
+                        let count = 0;
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+
+                        const updateCount = () => {
+                            if (count < target) {
+                                count += increment;
+                                stat.textContent = Math.floor(count) + (stat.textContent.includes('%') ? '%' : '+');
+                                setTimeout(updateCount, 16);
+                            } else {
+                                stat.textContent = target + (stat.textContent.includes('%') ? '%' : '+');
+                            }
+                        };
+
+                        updateCount();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.industry-stats'));
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Company</h5>
+                    <p class="text-muted-custom mb-3">
+                        Transforming businesses through innovative digital solutions since 2010.
+                    </p>
+                    <address class="text-muted-custom">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        123 Innovation Drive<br>
+                        San Francisco, CA 94107
+                    </address>
+                </div>
+
+                <!-- Services Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Web Development</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Mobile Apps</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">UI/UX Design</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Digital Strategy</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Cloud Solutions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Case Studies</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Whitepapers</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Webinars</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Documentation</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Contact</h5>
+                    <ul class="list-unstyled text-muted-custom">
+                        <li class="mb-2">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:hello@company.com"
+                                class="text-muted-custom text-decoration-none">hello@company.com</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            <a href="tel:+1-555-123-4567" class="text-muted-custom text-decoration-none">+1 (555)
+                                123-4567</a>
+                        </li>
+                    </ul>
+
+                    <!-- Newsletter Signup -->
+                    <div class="mt-4">
+                        <h6 class="mb-2">Stay Updated</h6>
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-sm" placeholder="Your email"
+                                aria-label="Your email">
+                            <button class="btn btn-accent btn-sm" type="button">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-4" style="border-color: var(--muted);">
+
+            <!-- Bottom row -->
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted-custom mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item mx-2">•</li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item mx-2">•</li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <div class="social-icons">
+                        <a href="#" class="text-muted-custom me-3" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom me-3" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom me-3" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

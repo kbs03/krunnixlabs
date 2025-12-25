@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Get in Touch | NEXUS</title>
+    <meta name="description"
+        content="Contact our team to discuss your project requirements and get a free consultation.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a202c;
+            --muted: #718096;
+            --light: #f8fafc;
+            --card: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding-top: 80px;
+            background-color: #f8fafc;
+            color: var(--dark);
+        }
+
+        /* Header & Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            padding: 0.5rem 0 !important;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Navigation Links */
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Two-Column Services Dropdown */
+        .services-dropdown {
+            min-width: 800px;
+            padding: 0;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            animation: dropdownFadeIn 0.3s ease;
+        }
+
+        @keyframes dropdownFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .services-container {
+            display: flex;
+            min-height: 400px;
+        }
+
+        /* Left Column - Main Services */
+        .main-services {
+            flex: 0 0 300px;
+            background: linear-gradient(135deg, #f8fafc, #edf2f7);
+            border-right: 1px solid #e2e8f0;
+            padding-top: 10px;
+        }
+
+        .main-services-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            border-bottom: 2px solid var(--primary);
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .main-service-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .main-service-item:hover,
+        .main-service-item.active {
+            background: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            transform: translateX(5px);
+        }
+
+        .main-service-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .main-service-content {
+            flex: 1;
+        }
+
+        .main-service-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .main-service-arrow {
+            color: var(--muted);
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .main-service-item.active .main-service-arrow {
+            color: var(--primary);
+            transform: translateX(3px);
+        }
+
+        /* Right Column - Sub Services */
+        .sub-services {
+            flex: 1;
+            padding: 2rem;
+            background: white;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sub-services-header {
+            margin-bottom: 1rem;
+        }
+
+        .sub-services-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-services-description {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .sub-services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .sub-service-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 16px;
+            text-decoration: none;
+            color: #1a202c;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            gap: 12px;
+        }
+
+        .sub-service-item:hover {
+            background: #f7fafc;
+        }
+
+        .sub-service-item:hover .sub-service-name {
+            color: var(--primary);
+        }
+
+        .sub-service-item:hover .sub-service-arrow {
+            color: var(--primary);
+            transform: translateX(3px);
+        }
+
+        .sub-service-name {
+            margin: 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1a202c;
+            transition: color 0.3s ease;
+        }
+
+        .sub-service-arrow {
+            margin-left: auto;
+            color: #718096;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Dropdown Toggle */
+        .dropdown-toggle::after {
+            display: inline-block;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            content: "▾";
+            border: none;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle.show::after {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile Navigation */
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 991.98px) {
+            .services-dropdown {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .services-container {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .main-services {
+                flex: none;
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .navbar-collapse {
+                background: white;
+                border-radius: 12px;
+                margin-top: 1rem;
+                padding: 1rem;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .nav-link {
+                margin: 0.25rem 0;
+                text-align: center;
+            }
+
+            .btn-primary {
+                width: 100%;
+                margin-top: 0.5rem;
+                text-align: center;
+            }
+        }
+
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 100px 0;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-tech {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .card-tech:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .recaptcha-placeholder {
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .success-icon,
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        .bg-navy {
+            background-color: #1a202c;
+        }
+
+        .text-muted-custom {
+            color: #a0aec0 !important;
+        }
+
+        .social-icons a {
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Animation for form elements */
+        .form-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            height: 400px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .accordion-button {
+            font-weight: 600;
+            padding: 1.25rem;
+            border: none;
+            background: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: white;
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, .125);
+        }
+
+        .accordion-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-body {
+            padding: 1.25rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-cube me-2"></i>NEXUS
+                </a>
+
+                <!-- Mobile hamburger -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Desktop navigation -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu services-dropdown">
+                                <div class="services-container">
+                                    <!-- Left Column - Main Services -->
+                                    <div class="main-services">
+                                        <div style="margin-bottom:10px;" class="main-services-title">Our Services</div>
+
+                                        <div class="main-service-item active" data-service="product-engineering">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-cube"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Product Engineering & SaaS</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="enterprise-software">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-building"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Enterprise Software & Applications</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="cloud-devops">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-cloud"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Cloud, DevOps & Security</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="ai-data">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-brain"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">AI & Data Solutions</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="low-code">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Low-Code/No-Code Development</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="main-service-item" data-service="staff-augmentation">
+                                            <div class="main-service-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="main-service-content">
+                                                <div class="main-service-name">Staff Augmentation</div>
+                                            </div>
+                                            <div class="main-service-arrow">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Column - Sub Services -->
+                                    <div class="sub-services">
+                                        <div class="sub-services-header">
+                                            <h3 class="sub-services-title">Product Engineering & SaaS</h3>
+                                        </div>
+
+                                        <div class="sub-services-list">
+                                            <a href="web-development.html" class="sub-service-item">
+                                                <h4 class="sub-service-name">Web Application Development</h4>
+                                                <div class="sub-service-arrow">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </a>
+
+                                            <a href="mobile-development.html" class="sub-service-item">
+                                                <h4 class="sub-service-name">Mobile App Development</h4>
+                                                <div class="sub-service-arrow">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </a>
+
+                                            <a href="saas-development.html" class="sub-service-item">
+                                                <h4 class="sub-service-name">SaaS Platform Development</h4>
+                                                <div class="sub-service-arrow">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </a>
+
+                                            <a href="api-development.html" class="sub-service-item">
+                                                <h4 class="sub-service-name">API Development & Integration</h4>
+                                                <div class="sub-service-arrow">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Industries</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="work.html">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="careers.html">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Desktop CTA -->
+                    <a href="contact.html" class="btn btn-primary">Let's Talk</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Hero -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="hero-title">Let's Build Something Amazing Together</h1>
+                        <p class="hero-subtitle">Get in touch with our team to discuss your project requirements and get
+                            a free consultation.</p>
+
+                        <div class="contact-info">
+                            <div class="contact-item d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <strong>Email</strong>
+                                    <div class="text-muted-custom">hello@nexus.com</div>
+                                </div>
+                            </div>
+                            <div class="contact-item d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <div class="text-muted-custom">+1 (555) 123-4567</div>
+                                </div>
+                            </div>
+                            <div class="contact-item d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <strong>Office</strong>
+                                    <div class="text-muted-custom">123 Innovation Drive, San Francisco, CA 94107</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <!-- Contact Form -->
+                        <div class="contact-form-container card-tech form-animate" style="animation-delay: 0.2s;">
+                            <h2 class="h3 mb-4">Send us a message</h2>
+
+                            <!-- Live region for form announcements -->
+                            <div id="formLiveRegion" aria-live="polite" aria-atomic="true" class="visually-hidden">
+                            </div>
+
+                            <form id="leadForm" novalidate>
+                                <div class="row g-3">
+                                    <!-- Full Name -->
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName" required
+                                            aria-describedby="nameError">
+                                        <div class="invalid-feedback" id="nameError">Please provide your full name.
+                                        </div>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required
+                                            aria-describedby="emailError">
+                                        <div class="invalid-feedback" id="emailError">Please provide a valid email
+                                            address.</div>
+                                    </div>
+
+                                    <!-- Phone -->
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                            aria-describedby="phoneError">
+                                        <div class="invalid-feedback" id="phoneError">Please provide a valid phone
+                                            number.</div>
+                                    </div>
+
+                                    <!-- Company -->
+                                    <div class="col-md-6">
+                                        <label for="company" class="form-label">Company</label>
+                                        <input type="text" class="form-control" id="company" name="company">
+                                    </div>
+
+                                    <!-- Country -->
+                                    <div class="col-12">
+                                        <label for="country" class="form-label">Country *</label>
+                                        <select class="form-select" id="country" name="country" required
+                                            aria-describedby="countryError">
+                                            <option value="">Select your country</option>
+                                            <option value="US">United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="FR">France</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="SG">Singapore</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="countryError">Please select your country.
+                                        </div>
+                                    </div>
+
+                                    <!-- Service Interest -->
+                                    <div class="col-12">
+                                        <label for="serviceInterest" class="form-label">Service Interest *</label>
+                                        <select class="form-select" id="serviceInterest" name="serviceInterest" required
+                                            aria-describedby="serviceError">
+                                            <option value="">Select a service</option>
+                                            <option value="product-engineering">Product Engineering</option>
+                                            <option value="ai-data">AI & Data Solutions</option>
+                                            <option value="cloud-devops">Cloud & DevOps</option>
+                                            <option value="security">Security Services</option>
+                                            <option value="low-code">Low-code Development</option>
+                                            <option value="ui-ux">UI/UX Design</option>
+                                            <option value="consulting">Technical Consulting</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="serviceError">Please select a service of
+                                            interest.</div>
+                                    </div>
+
+                                    <!-- Message -->
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Project Details *</label>
+                                        <textarea class="form-control" id="message" name="message" rows="4" required
+                                            aria-describedby="messageError"
+                                            placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
+                                        <div class="invalid-feedback" id="messageError">Please provide project details.
+                                        </div>
+                                    </div>
+
+                                    <!-- File Upload -->
+                                    <div class="col-12">
+                                        <label for="fileUpload" class="form-label">Attach Files (Optional)</label>
+                                        <input type="file" class="form-control" id="fileUpload" name="fileUpload"
+                                            accept=".pdf,.doc,.docx,.jpg,.png,.zip" aria-describedby="fileHelp">
+                                        <div id="fileHelp" class="form-text">You can attach project briefs, requirements
+                                            documents, or resumes. Max file size: 10MB. Supported formats: PDF, DOC,
+                                            JPG, PNG, ZIP.</div>
+                                        <div class="invalid-feedback" id="fileError">File size too large or format not
+                                            supported.</div>
+                                    </div>
+
+                                    <!-- reCAPTCHA Placeholder -->
+                                    <div class="col-12">
+                                        <div class="recaptcha-placeholder">
+                                            <div class="mb-2">
+                                                <i class="fas fa-robot text-muted fa-2x"></i>
+                                            </div>
+                                            <p class="small text-muted-custom mb-2">reCAPTCHA v2</p>
+                                            <div class="d-inline-block border rounded bg-white p-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="recaptchaCheckbox">
+                                                    <label class="form-check-label small" for="recaptchaCheckbox">
+                                                        I'm not a robot
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <p class="small text-muted-custom mt-2 mb-0">
+                                                <i class="fas fa-shield-alt me-1"></i>
+                                                Protected by reCAPTCHA - <a href="#" class="text-primary">Privacy</a> &
+                                                <a href="#" class="text-primary">Terms</a>
+                                            </p>
+                                        </div>
+                                        <div class="invalid-feedback" id="recaptchaError">Please complete the reCAPTCHA
+                                            verification.</div>
+                                    </div>
+
+                                    <!-- Consent -->
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="consent" name="consent"
+                                                required aria-describedby="consentError">
+                                            <label class="form-check-label small" for="consent">
+                                                I agree to the <a href="#" class="text-primary">Privacy Policy</a> and
+                                                consent to having my data processed for the purpose of responding to my
+                                                inquiry. *
+                                            </label>
+                                            <div class="invalid-feedback" id="consentError">You must agree before
+                                                submitting.</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-lg w-100 py-3"
+                                            id="submitButton">
+                                            <span class="submit-text">Send Message</span>
+                                            <span class="spinner-border spinner-border-sm visually-hidden" role="status"
+                                                aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="display-5 fw-bold mb-3">Find Our Office</h2>
+                        <p class="lead text-muted-custom">Visit us at our headquarters in San Francisco</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="map-container">
+                            <!-- Placeholder for Google Maps -->
+                            <div class="w-100 h-100 bg-light d-flex align-items-center justify-content-center">
+                                <div class="text-center">
+                                    <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
+                                    <h4>Interactive Map</h4>
+                                    <p class="text-muted-custom">123 Innovation Drive, San Francisco, CA 94107</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
+                        <p class="lead text-muted-custom">Find answers to common questions about our services and
+                            process</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        How quickly can you start working on my project?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We can typically start within 1-2 weeks after the initial consultation and
+                                        agreement. The exact timeline depends on project complexity and our current
+                                        capacity. For urgent projects, we offer expedited onboarding.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        What is your typical project process?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Our process includes: Discovery & Planning, Design & Prototyping, Development &
+                                        Testing, Deployment, and Ongoing Support. We work closely with you at every
+                                        stage to ensure alignment with your vision and business goals.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Do you work with startups and small businesses?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Absolutely! We work with businesses of all sizes, from startups to Fortune 500
+                                        companies. We offer flexible engagement models and pricing to accommodate
+                                        different budgets and requirements.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        What industries do you specialize in?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We have extensive experience across multiple industries including Healthcare,
+                                        Finance, Retail, Education, Logistics, and Manufacturing. Our cross-industry
+                                        expertise allows us to bring innovative solutions to your specific challenges.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Company</h5>
+                    <p class="text-muted-custom mb-3">
+                        Transforming businesses through innovative digital solutions since 2010.
+                    </p>
+                    <address class="text-muted-custom">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        123 Innovation Drive<br>
+                        San Francisco, CA 94107
+                    </address>
+                </div>
+
+                <!-- Services Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Web Development</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Mobile Apps</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">UI/UX Design</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Digital Strategy</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Cloud Solutions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Case Studies</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Whitepapers</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Webinars</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Documentation</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Contact</h5>
+                    <ul class="list-unstyled text-muted-custom">
+                        <li class="mb-2">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:hello@nexus.com"
+                                class="text-muted-custom text-decoration-none">hello@nexus.com</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            <a href="tel:+1-555-123-4567" class="text-muted-custom text-decoration-none">+1 (555)
+                                123-4567</a>
+                        </li>
+                    </ul>
+
+                    <!-- Newsletter Signup -->
+                    <div class="mt-4">
+                        <h6 class="mb-2">Stay Updated</h6>
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-sm" placeholder="Your email"
+                                aria-label="Your email">
+                            <button class="btn btn-primary btn-sm" type="button">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-4" style="border-color: var(--muted);">
+
+            <!-- Bottom row -->
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted-custom mb-0">&copy; 2024 NEXUS. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item mx-2">•</li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item mx-2">•</li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted-custom text-decoration-none">Cookie Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <div class="social-icons">
+                        <a href="#" class="text-muted-custom me-3" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom me-3" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom me-3" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-muted-custom" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div
+                        class="success-icon bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                        <i class="fas fa-check fa-2x"></i>
+                    </div>
+                    <h3 class="h4 mb-3" id="successModalLabel">Message Sent Successfully!</h3>
+                    <p class="text-muted-custom mb-4">Thank you for contacting us. We've received your message and will
+                        get back to you within 24 hours.</p>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div
+                        class="error-icon bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                        <i class="fas fa-exclamation fa-2x"></i>
+                    </div>
+                    <h3 class="h4 mb-3" id="errorModalLabel">Something Went Wrong</h3>
+                    <p class="text-muted-custom mb-4" id="errorMessage">We encountered an issue while sending your
+                        message. Please try again later or contact us directly.</p>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Header scroll effect
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Services dropdown functionality
+            const mainServiceItems = document.querySelectorAll('.main-service-item');
+            const subServicesTitle = document.querySelector('.sub-services-title');
+            const subServicesList = document.querySelector('.sub-services-list');
+
+            const servicesData = {
+                'product-engineering': {
+                    title: 'Product Engineering & SaaS',
+                    subServices: [
+                        {
+                            name: 'Web Application Development',
+                            url: 'web-development.html'
+                        },
+                        {
+                            name: 'Mobile App Development',
+                            url: 'mobile-development.html'
+                        },
+                        {
+                            name: 'SaaS Platform Development',
+                            url: 'saas-development.html'
+                        },
+                        {
+                            name: 'API Development & Integration',
+                            url: 'api-development.html'
+                        }
+                    ]
+                },
+                'enterprise-software': {
+                    title: 'Enterprise Software & Applications',
+                    subServices: [
+                        {
+                            name: 'ERP Systems Implementation',
+                            url: 'erp-systems.html'
+                        },
+                        {
+                            name: 'Business Intelligence',
+                            url: 'business-intelligence.html'
+                        },
+                        {
+                            name: 'Workflow Automation',
+                            url: 'workflow-automation.html'
+                        },
+                        {
+                            name: 'Legacy System Modernization',
+                            url: 'legacy-modernization.html'
+                        }
+                    ]
+                },
+                'cloud-devops': {
+                    title: 'Cloud, DevOps & Security',
+                    subServices: [
+                        {
+                            name: 'Cloud Migration Services',
+                            url: 'cloud-migration.html'
+                        },
+                        {
+                            name: 'DevOps Implementation',
+                            url: 'devops-implementation.html'
+                        },
+                        {
+                            name: 'Security Solutions',
+                            url: 'security-solutions.html'
+                        },
+                        {
+                            name: 'Infrastructure as Code',
+                            url: 'infrastructure-code.html'
+                        }
+                    ]
+                },
+                'ai-data': {
+                    title: 'AI & Data Solutions',
+                    subServices: [
+                        {
+                            name: 'Machine Learning Solutions',
+                            url: 'machine-learning.html'
+                        },
+                        {
+                            name: 'AI Implementation',
+                            url: 'ai-implementation.html'
+                        },
+                        {
+                            name: 'Data Analytics',
+                            url: 'data-analytics.html'
+                        },
+                        {
+                            name: 'Big Data Solutions',
+                            url: 'big-data.html'
+                        }
+                    ]
+                },
+                'low-code': {
+                    title: 'Low-Code/No-Code Development',
+                    subServices: [
+                        {
+                            name: 'Rapid Prototyping',
+                            url: 'rapid-prototyping.html'
+                        },
+                        {
+                            name: 'Visual Development',
+                            url: 'visual-development.html'
+                        },
+                        {
+                            name: 'Custom Components',
+                            url: 'custom-components.html'
+                        },
+                        {
+                            name: 'Accelerated Deployment',
+                            url: 'accelerated-deployment.html'
+                        }
+                    ]
+                },
+                'staff-augmentation': {
+                    title: 'Staff Augmentation',
+                    subServices: [
+                        {
+                            name: 'Dedicated Developers',
+                            url: 'dedicated-developers.html'
+                        },
+                        {
+                            name: 'Team Extension',
+                            url: 'team-extension.html'
+                        },
+                        {
+                            name: 'Expert Consultation',
+                            url: 'expert-consultation.html'
+                        },
+                        {
+                            name: 'Project-based Staffing',
+                            url: 'project-staffing.html'
+                        }
+                    ]
+                }
+            };
+
+            function updateSubServices(serviceKey) {
+                const service = servicesData[serviceKey];
+
+                if (service) {
+                    subServicesTitle.textContent = service.title;
+
+                    // Clear existing sub-services
+                    subServicesList.innerHTML = '';
+
+                    // Add new sub-services
+                    service.subServices.forEach(subService => {
+                        const subServiceItem = document.createElement('a');
+                        subServiceItem.className = 'sub-service-item';
+                        subServiceItem.href = subService.url;
+
+                        subServiceItem.innerHTML = `
+                        <h4 class="sub-service-name">${subService.name}</h4>
+                        <div class="sub-service-arrow">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    `;
+
+                        subServicesList.appendChild(subServiceItem);
+                    });
+                }
+            }
+
+            // Add click event listeners to main service items
+            mainServiceItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all items
+                    mainServiceItems.forEach(i => i.classList.remove('active'));
+
+                    // Add active class to clicked item
+                    this.classList.add('active');
+
+                    // Update sub-services
+                    const serviceKey = this.getAttribute('data-service');
+                    updateSubServices(serviceKey);
+                });
+            });
+
+            // Initialize with the first service active
+            if (mainServiceItems.length > 0) {
+                mainServiceItems[0].classList.add('active');
+                updateSubServices(mainServiceItems[0].getAttribute('data-service'));
+            }
+
+            // Form validation and submission
+            const leadForm = document.getElementById('leadForm');
+            const submitButton = document.getElementById('submitButton');
+            const submitText = submitButton.querySelector('.submit-text');
+            const spinner = submitButton.querySelector('.spinner-border');
+
+            leadForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!validateForm()) {
+                    return;
+                }
+
+                // Show loading state
+                submitText.classList.add('visually-hidden');
+                spinner.classList.remove('visually-hidden');
+                submitButton.disabled = true;
+
+                // Simulate form submission
+                setTimeout(() => {
+                    // Hide loading state
+                    submitText.classList.remove('visually-hidden');
+                    spinner.classList.add('visually-hidden');
+                    submitButton.disabled = false;
+
+                    // Show success modal
+                    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    successModal.show();
+
+                    // Reset form
+                    leadForm.reset();
+                    leadForm.classList.remove('was-validated');
+                }, 2000);
+            });
+
+            function validateForm() {
+                const form = document.getElementById('leadForm');
+
+                if (!form.checkValidity()) {
+                    form.classList.add('was-validated');
+                    return false;
+                }
+
+                // Check reCAPTCHA
+                const recaptchaCheckbox = document.getElementById('recaptchaCheckbox');
+                if (!recaptchaCheckbox.checked) {
+                    document.getElementById('recaptchaError').style.display = 'block';
+                    return false;
+                } else {
+                    document.getElementById('recaptchaError').style.display = 'none';
+                }
+
+                return true;
+            }
+
+            // File upload validation
+            const fileUpload = document.getElementById('fileUpload');
+            fileUpload.addEventListener('change', function () {
+                const file = this.files[0];
+                if (file) {
+                    const fileSize = file.size / 1024 / 1024; // in MB
+                    const validTypes = ['application/pdf', 'application/msword',
+                        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                        'image/jpeg', 'image/png', 'application/zip'];
+
+                    if (fileSize > 10) {
+                        document.getElementById('fileError').style.display = 'block';
+                        this.value = '';
+                    } else if (!validTypes.includes(file.type)) {
+                        document.getElementById('fileError').style.display = 'block';
+                        this.value = '';
+                    } else {
+                        document.getElementById('fileError').style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
